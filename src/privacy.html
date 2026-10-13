@@ -1,0 +1,74 @@
+<!--meta {"title": "Privacy policy", "desc": "A Jira app by Vudia. This page explains exactly what the app reads from Jira, what it stores, and what it never touches."} -->
+<section id="summary">
+      <h2>Summary</h2>
+      <p>CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. It has no servers of its own and makes no outbound network call to anything outside Atlassian. We do not operate any system that receives your data, and we cannot see the data your site holds in the app. The app stores the records your users enter (leads, contacts, companies, deals, products, tasks and notes) in Forge storage, scoped to your own site.</p>
+    </section>
+
+    <section id="reads">
+      <h2>What it reads from Jira</h2>
+      <p>Always live, using the signed-in user's own Jira permissions:</p>
+      <ul>
+        <li>A work item's key, summary and status, when a user links a record to it</li>
+        <li>People's display names and profiles, to show who owns, assigned or changed a record</li>
+        <li>User search results, for the owner and assignee pickers</li>
+        <li>Whether the user holds the site's <code class="field">ADMINISTER</code> permission, to gate the workspace settings</li>
+      </ul>
+      <p>None of it is copied anywhere outside your site.</p>
+    </section>
+
+    <section id="writes">
+      <h2>What it writes to Jira</h2>
+      <p>Nothing. The app never creates, edits, transitions or comments on a Jira issue. It only reads.</p>
+    </section>
+
+    <section id="stores">
+      <h2>What it stores</h2>
+      <p>In Forge storage, scoped to your site: the leads, contacts, companies, deals, products, tasks, notes and product line items your users create, the audit trail (the latest 500 entries), each person's saved views, and the workspace settings (currency and stale-deal threshold).</p>
+      <p>Contacts, companies and leads can include the personal details of <em>your</em> customers and prospects, such as names, email addresses, phone numbers, job titles and LinkedIn links. That data belongs to you: you decide what to enter, and you are responsible for having a lawful basis to keep it.</p>
+      <div class="not-list">
+        <span class="not-pill">passwords</span>
+        <span class="not-pill">API tokens</span>
+        <span class="not-pill">payment details</span>
+        <span class="not-pill">Jira issue content beyond what's listed above</span>
+      </div>
+    </section>
+
+    <section id="personal-data">
+      <h2>Atlassian account data</h2>
+      <p>The app stores the Atlassian account ID of the people who appear on records: the owner or assignee, and the person who created or last changed a record or made an audit-trail entry. It stores display names only for the moment they are shown. It stores no Atlassian email address, password or token.</p>
+    </section>
+
+    <section id="retention">
+      <h2>Retention &amp; deletion</h2>
+      <p>Data stays in your site's Forge storage until your users delete it in the app, or until the app is uninstalled. Deleting a record in the app is permanent. Deleting a deal also deletes its line items and notes; the audit trail keeps a line saying it was deleted until that line ages out. Removal of storage after uninstall follows Atlassian's own Forge retention policy.</p>
+    </section>
+
+    <section id="location">
+      <h2>Where data is stored</h2>
+      <p>Inside Atlassian's own Forge storage platform, in the same data residency as the rest of your Jira site. Nothing leaves Atlassian's infrastructure: the app declares no permission to call any external service.</p>
+    </section>
+
+    <section id="logs">
+      <h2>Logs</h2>
+      <p>The app writes very little to logs, for example the number of old audit entries it removed. It does not write the contents of records to logs.</p>
+    </section>
+
+    <section id="tracking">
+      <h2>Analytics &amp; tracking</h2>
+      <p>None. The app contains no analytics, no tracking pixels, no advertising and no third-party scripts of any kind.</p>
+    </section>
+
+    <section id="rights">
+      <h2>Your rights</h2>
+      <p>Because we hold no copy of your data outside your own Forge storage, requests to access, correct or delete it are handled directly in the app by your own users and administrators. Anyone who can open the app can find, edit and delete a person's record. If you have a question we have not answered here, contact us using the details below.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to this policy</h2>
+      <p>If what the app reads, writes or stores changes, this page changes with it.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:info@vudia.site">info@vudia.site</a></p>
+    </section>

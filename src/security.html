@@ -1,0 +1,33 @@
+<!--meta {"title": "Security policy", "desc": "How this app is built, what it can access, and how we handle a security report. For the technical reviewer, not just the end user."} -->
+<section id="architecture">
+      <h2>Architecture and hosting</h2>
+      <p>CRM for Jira is built entirely on Atlassian Forge, in UI Kit (not Custom UI), so its interface is rendered by the platform itself, not by code we serve. It has no servers, databases or infrastructure of its own: it stores no data outside Atlassian, and its manifest declares no permission to make an outbound network call to anything other than Atlassian's own APIs.</p>
+      <p>Transport security, encryption, physical security and patching of the underlying platform are Atlassian's responsibility, covered by Atlassian's own compliance programme for Forge.</p>
+    </section>
+
+    <section id="data">
+      <h2>Data we handle</h2>
+      <p>The app handles the records your users type in. It reads a Jira work item's summary and status live when a user links one, and people's names to display. It holds no permission to create, edit, transition or comment on an issue, so it cannot write to Jira at all. Full detail on what is and is not kept is in the <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+
+    <section id="auth">
+      <h2>Authentication and access control</h2>
+      <p>There is no independent login system. Every request runs as the signed-in Jira user, authenticated by Forge through their existing Jira session. We never collect, transmit or store Atlassian usernames, passwords or API tokens.</p>
+      <p>Inside the app there are no roles: anyone who can open it can read and change every record (see <a href="permissions.html">Permissions and access</a>). The one exception is workspace settings, which the server only accepts from a user who holds Jira's site <code>ADMINISTER</code> permission, checked on every save. Access is bounded by the scopes declared in the manifest:</p>
+      <div class="scope-list">
+        <div class="scope-item"><code>read:jira-work</code><span>check that a work item exists and read its summary and status</span></div>
+        <div class="scope-item"><code>read:jira-user</code><span>show people's names, search users for the owner and assignee pickers</span></div>
+        <div class="scope-item"><code>storage:app</code><span>the app's own Forge key-value store</span></div>
+      </div>
+      <p>No Jira write scope is declared anywhere in the manifest. Every Jira call is made as the signed-in user (<code>asUser</code>), so Jira's own permissions apply.</p>
+    </section>
+
+    <section id="practices">
+      <h2>Input handling</h2>
+      <p>Every server function validates what it receives before using it: record ids must be well-formed UUIDs, text is trimmed and length-limited, choices (stages, statuses, sources, ratings, reasons, currencies) are checked against fixed lists, numbers must be finite and non-negative, and account ids and Jira work item keys must match strict patterns. Saved-view filters are limited to a fixed set of keys. The app was reviewed against the OWASP list of common weaknesses and hardened where needed.</p>
+    </section>
+
+    <section id="report">
+      <h2>Reporting a vulnerability</h2>
+      <p>Email <a href="mailto:security@vudia.site">security@vudia.site</a> with what you found, the steps to reproduce it, and which part of the app it affects. Please do not publish details until we have had a chance to fix it. For general support, use <a href="mailto:info@vudia.site">info@vudia.site</a>.</p>
+    </section>

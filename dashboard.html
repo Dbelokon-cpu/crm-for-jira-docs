@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · CRM for Jira documentation</title>
+<meta name="description" content="The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html" aria-current="page">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
+    <h1>Dashboard</h1>
+    <p class="subtitle">The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.</p>
+    <h2 id="what-is-on-it">What is on it<a class="h-anchor" href="#what-is-on-it" aria-label="Link to this section">#</a></h2>
+    <p>The Dashboard answers "what needs me today?" before "how are we doing?". Its sections:</p>
+    <div class="tablewrap"><table>
+      <tr><th>Section</th><th>What it shows</th></tr>
+      <tr><td>Needs attention</td><td>Counts of things to act on: overdue tasks, overdue next steps, deals past their close date, stale deals, stale leads and potential duplicates.</td></tr>
+      <tr><td>Totals</td><td>How many leads, contacts, companies and deals you have.</td></tr>
+      <tr><td>Pipeline</td><td>Open deals, open pipeline value, weighted pipeline and average deal.</td></tr>
+      <tr><td>Performance</td><td>For a chosen period (7, 30 or 90 days, or all time), and optionally one assignee: won value, deals won and lost, win rate, new leads, average deal and sales cycle. With a period chosen, each tile shows the change against the period before it.</td></tr>
+      <tr><td>Pipeline by stage</td><td>How many deals and how much value sit in each stage.</td></tr>
+      <tr><td>Deals Closing Soon, Tasks Due Soon</td><td>The next things on the calendar.</td></tr>
+      <tr><td>Recently Won, Recent Activity</td><td>What just happened.</td></tr>
+      <tr><td>Trends</td><td>New leads, revenue and win rate over the last few months.</td></tr>
+    </table></div>
+
+    <h2 id="tiles-are-shortcuts">Tiles are shortcuts<a class="h-anchor" href="#tiles-are-shortcuts" aria-label="Link to this section">#</a></h2>
+    <p>A tile that names a group of records is a filter. Click <em>Stale</em> or <em>No Next Step</em> and you land on the Deals list already narrowed to exactly those deals. Use it as a daily starting point.</p>
+
+    <h2 id="how-the-key-numbers-are-worked-out">How the key numbers are worked out<a class="h-anchor" href="#how-the-key-numbers-are-worked-out" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Win rate</strong>: deals won divided by deals won plus lost in the period. Open deals are not counted. With no closed deals it shows a dash rather than 0%.</li>
+      <li><strong>Sales cycle</strong>: the average time from creating a deal to winning it, for deals won in the period.</li>
+      <li><strong>Weighted pipeline</strong>: see <a href="pipeline.html#weighted-pipeline">Leads, deals and the pipeline</a>.</li>
+      </ul>
+    <p>The currency of every amount comes from <a href="settings.html">Settings</a>.</p>
+    <div class="pagenav"><a class="prev" href="bulk-csv.html"><small>Previous</small>Bulk actions, import and export</a><a class="next" href="reports.html"><small>Next</small>Reports</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#what-is-on-it">What is on it</a>
+    <a href="#tiles-are-shortcuts">Tiles are shortcuts</a>
+    <a href="#how-the-key-numbers-are-worked-out">How the key numbers are worked out</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

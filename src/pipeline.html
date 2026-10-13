@@ -1,0 +1,41 @@
+<!--meta {"title": "Leads, deals and the pipeline", "desc": "How a prospect becomes a sale: the statuses, the six deal stages, win probability and the weighted forecast."} -->
+<h2>From lead to deal</h2>
+<p>A <strong>lead</strong> is someone who has shown interest but is not yet a customer. A <strong>deal</strong> is a sale you are actively working. The two are separate records on purpose: most leads never become deals, and you do not want them in your forecast.</p>
+<p>A lead moves through five statuses: <em>New</em>, <em>Contacted</em>, <em>Qualified</em>, <em>Converted</em> or <em>Lost</em>. When a lead is qualified, you <a href="leads.html#converting-a-lead">convert</a> it. That creates the deal and links the two, so you can always see where a deal came from.</p>
+
+<h2>The six stages</h2>
+<p>There is one pipeline, with six stages. Each has a default chance of winning:</p>
+<div class="tablewrap"><table>
+  <tr><th>Stage</th><th class="num">Win probability</th><th>Meaning</th></tr>
+  <tr><td>New</td><td class="num">10%</td><td>Just created, not yet worked</td></tr>
+  <tr><td>Discovery</td><td class="num">25%</td><td>You are learning what the customer needs</td></tr>
+  <tr><td>Negotiation</td><td class="num">50%</td><td>Terms are being discussed</td></tr>
+  <tr><td>Proposal</td><td class="num">75%</td><td>A proposal is with the customer</td></tr>
+  <tr><td>Won</td><td class="num">100%</td><td>Closed, the customer signed</td></tr>
+  <tr><td>Lost</td><td class="num">0%</td><td>Closed, no sale</td></tr>
+</table></div>
+<p>One pipeline is enough for most small teams. The stages are fixed: you cannot add or rename them.</p>
+
+<h2 id="weighted-pipeline">Weighted pipeline</h2>
+<p>A raw pipeline total treats a brand new deal and a nearly signed one as equal. <strong>Weighted pipeline</strong> multiplies each open deal's amount by its probability, so it is a more realistic forecast.</p>
+<div class="example">
+  <strong>Example</strong>
+  <div class="tablewrap"><table>
+    <tr><th>Deal</th><th class="num">Amount</th><th>Stage</th><th class="num">Weighted</th></tr>
+    <tr><td>Northwind: annual licence</td><td class="num">12,000</td><td>Proposal (75%)</td><td class="num">9,000</td></tr>
+    <tr><td>Contoso: pilot</td><td class="num">4,000</td><td>Discovery (25%)</td><td class="num">1,000</td></tr>
+    <tr><td colspan="3"><strong>Pipeline</strong> 16,000</td><td class="num"><strong>10,000</strong></td></tr>
+  </table></div>
+</div>
+<p>If you know a particular deal is more or less likely than its stage says, set a probability on that deal. It replaces the stage's default for that deal only.</p>
+
+<h2>Won and lost, and why</h2>
+<p>Moving a deal to Won or Lost asks for a reason. The reasons are what the <a href="reports.html#deal-outcomes">Deal outcomes</a> report counts, so they turn a hunch ("we keep losing on price") into a number.</p>
+<ul>
+  <li><strong>Won:</strong> Best Price, Product Fit, Relationship, Switched from Competitor, Referral, Other.</li>
+  <li><strong>Lost:</strong> Price, Lost to Competitor, No Budget, No Decision Made, Bad Timing, Other.</li>
+</ul>
+
+<h2 id="stale-deals">Stale deals</h2>
+<p>A deal is <strong>stale</strong> when it has not changed stage for a number of days. The default is 14; a Jira administrator can change it in <a href="settings.html">Settings</a>. Stale deals are flagged in the board and the table, and there is a <em>Stale</em> filter for them. A deal that is Won or Lost is never stale.</p>
+<p>The same threshold applies to <strong>leads</strong>: a lead whose status has not changed for that long, and which is not yet Converted or Lost, is flagged stale.</p>

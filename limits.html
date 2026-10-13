@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limits and behaviour · CRM for Jira documentation</title>
+<meta name="description" content="Every limit and fixed behaviour in one place: sizes, formats and what happens at the edges.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html" aria-current="page">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Reference</div>
+    <h1>Limits and behaviour</h1>
+    <p class="subtitle">Every limit and fixed behaviour in one place: sizes, formats and what happens at the edges.</p>
+    <h2 id="limits">Limits<a class="h-anchor" href="#limits" aria-label="Link to this section">#</a></h2>
+    <div class="tablewrap"><table>
+      <tr><th>What</th><th>Limit</th><th>What happens at the limit</th></tr>
+      <tr><td>Length of a text field (name, title, address and so on)</td><td class="num">255</td><td>Anything longer is cut off when saved.</td></tr>
+      <tr><td>Length of a note</td><td class="num">2,000</td><td>Cut off when saved.</td></tr>
+      <tr><td>Length of a saved view's name</td><td class="num">60</td><td>Refused.</td></tr>
+      <tr><td>Stale threshold</td><td class="num">1–365 days</td><td>Refused outside the range.</td></tr>
+      <tr><td>Entries kept in the audit trail</td><td class="num">500</td><td>The oldest are removed as new ones arrive. See <a href="activities.html">Activities</a>.</td></tr>
+      <tr><td>Activities shown on screen</td><td class="num">100</td><td>The newest 100 of those kept.</td></tr>
+      <tr><td>Search results per record type</td><td class="num">10</td><td>The count of all matches is still shown.</td></tr>
+    </table></div>
+
+    <h2 id="how-much-data-is-comfortable">How much data is comfortable<a class="h-anchor" href="#how-much-data-is-comfortable" aria-label="Link to this section">#</a></h2>
+    <p>The app loads your records when it opens and does the searching, sorting and filtering in your browser. That makes it quick and simple for a small team. It also means that the more records you have, the longer it takes to open, and the longer reports take to calculate.</p>
+    <p>A few thousand records per section is comfortable. If the app starts to feel slow to open or to save, tell your administrator and <a href="faq.html#support">contact support</a>. Pages that need to look at everything, such as global search, Potential Duplicates and some of the revenue reports, feel it first.</p>
+
+    <h2 id="behaviour">Behaviour<a class="h-anchor" href="#behaviour" aria-label="Link to this section">#</a></h2>
+    <div class="tablewrap"><table>
+      <tr><th>Topic</th><th>How it behaves</th></tr>
+      <tr><td>Currency</td><td>One currency for the whole workspace, set in Settings. Amounts are never converted.</td></tr>
+      <tr><td>Pipeline</td><td>One pipeline with six fixed stages. They cannot be renamed or added to.</td></tr>
+      <tr><td>Dates</td><td>Typed as <code>YYYY-MM-DD</code>. There is no date picker.</td></tr>
+      <tr><td>Phone numbers</td><td>7 to 20 characters: digits, spaces, <code>+ - ( ) .</code></td></tr>
+      <tr><td>Email addresses</td><td>Must look like an email. Two contacts, or two leads, cannot share one.</td></tr>
+      <tr><td>Amounts and prices</td><td>Zero or more.</td></tr>
+      <tr><td>Drag and drop</td><td>Not available. Change a deal's stage with its selector.</td></tr>
+      <tr><td>Export and import</td><td>CSV as text you copy and paste, not as a file download.</td></tr>
+      <tr><td>Saved views</td><td>Belong to the person who made them.</td></tr>
+      <tr><td>Deleting</td><td>Permanent. There is no recycle bin.</td></tr>
+      <tr><td>Jira data</td><td>Only read, never changed. See <a href="privacy.html">Privacy</a>.</td></tr>
+    </table></div>
+    <div class="pagenav"><a class="prev" href="jira.html"><small>Previous</small>Linking to Jira and sharing records</a><a class="next" href="permissions.html"><small>Next</small>Permissions and access</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#limits">Limits</a>
+    <a href="#how-much-data-is-comfortable">How much data is comfortable</a>
+    <a href="#behaviour">Behaviour</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

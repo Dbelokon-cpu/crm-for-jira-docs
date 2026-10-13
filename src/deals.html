@@ -1,0 +1,34 @@
+<!--meta {"title": "Deals", "desc": "Create deals, move them through the pipeline on a board or in a table, attach products, and close them as won or lost."} -->
+<h2>Add a deal</h2>
+<p>Open <strong>Deals</strong> and press <strong>Create Deal</strong>, or <a href="leads.html#converting-a-lead">convert a lead</a>. Fields:</p>
+<div class="tablewrap"><table>
+  <tr><th>Field</th><th>What it is for</th></tr>
+  <tr><td>Name</td><td>Required.</td></tr>
+  <tr><td>Amount</td><td>Zero or more, in the currency set in <a href="settings.html">Settings</a>. Once you attach products, the amount follows them.</td></tr>
+  <tr><td>Stage</td><td>One of the <a href="pipeline.html">six stages</a>.</td></tr>
+  <tr><td>Close date</td><td>When you expect to close. Used by the forecast by month. A deal past its close date is flagged overdue.</td></tr>
+  <tr><td>Next step and its due date</td><td>What happens next. Deals with no next step can be found with the <em>No Next Step</em> filter.</td></tr>
+  <tr><td>Type</td><td>New Business, Existing Business or Renewal.</td></tr>
+  <tr><td>Win probability</td><td>Optional. Replaces the stage's default for this deal.</td></tr>
+  <tr><td>Contact, company</td><td>Who you are selling to.</td></tr>
+  <tr><td>Owner</td><td>Who is responsible for the deal.</td></tr>
+  <tr><td>Jira work item</td><td>Optional. See <a href="jira.html">Linking to Jira</a>.</td></tr>
+</table></div>
+<p>Dates are typed as <code>YYYY-MM-DD</code>, for example <code>2026-11-30</code>. The app has no date picker.</p>
+
+<h2>Board and table</h2>
+<p>Deals open as a <strong>Kanban</strong> board: one column per stage, with the number of deals and their total value at the top of each. Press <strong>Table view</strong> for a sortable list and <strong>Kanban view</strong> to go back. Stale deals carry a badge showing how many days they have sat in their stage.</p>
+<p>Cards cannot be dragged between columns. Change the stage with the stage selector on the card or in the table row.</p>
+
+<h2>Products on a deal</h2>
+<p>Open a deal and add products from your <a href="products.html">catalogue</a> as line items. The deal's amount is kept in step with the line items, so you do not have to add them up. A line item keeps the price it had when you added it, so changing the catalogue price later does not rewrite existing deals.</p>
+
+<h2>Winning and losing</h2>
+<ul>
+  <li>Press <strong>Mark as Won</strong> and choose a reason. The stage becomes <em>Won</em>.</li>
+  <li>Press <strong>Mark as Lost</strong> and choose a reason. The stage becomes <em>Lost</em>.</li>
+</ul>
+<p>The reasons feed <a href="reports.html#deal-outcomes">Deal outcomes</a>. Won deals count in the Dashboard's <em>Deals Won</em> and in the win rate.</p>
+
+<h2>Deleting a deal</h2>
+<p>You are asked to confirm. Deleting removes the deal's line items and notes with it. The deal's history stays in <a href="activities.html">Activities</a> until it ages out.</p>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · CRM for Jira documentation</title>
+<meta name="description" content="A Jira app by Vudia. This page explains exactly what the app reads from Jira, what it stores, and what it never touches.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html" aria-current="page">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Policies</div>
+    <h1>Privacy policy</h1>
+    <p class="subtitle">A Jira app by Vudia. This page explains exactly what the app reads from Jira, what it stores, and what it never touches.</p>
+    <section id="summary">
+          <h2 id="summary-2">Summary<a class="h-anchor" href="#summary-2" aria-label="Link to this section">#</a></h2>
+          <p>CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. It has no servers of its own and makes no outbound network call to anything outside Atlassian. We do not operate any system that receives your data, and we cannot see the data your site holds in the app. The app stores the records your users enter (leads, contacts, companies, deals, products, tasks and notes) in Forge storage, scoped to your own site.</p>
+        </section>
+
+        <section id="reads">
+          <h2 id="what-it-reads-from-jira">What it reads from Jira<a class="h-anchor" href="#what-it-reads-from-jira" aria-label="Link to this section">#</a></h2>
+          <p>Always live, using the signed-in user's own Jira permissions:</p>
+          <ul>
+            <li>A work item's key, summary and status, when a user links a record to it</li>
+            <li>People's display names and profiles, to show who owns, assigned or changed a record</li>
+            <li>User search results, for the owner and assignee pickers</li>
+            <li>Whether the user holds the site's <code class="field">ADMINISTER</code> permission, to gate the workspace settings</li>
+          </ul>
+          <p>None of it is copied anywhere outside your site.</p>
+        </section>
+
+        <section id="writes">
+          <h2 id="what-it-writes-to-jira">What it writes to Jira<a class="h-anchor" href="#what-it-writes-to-jira" aria-label="Link to this section">#</a></h2>
+          <p>Nothing. The app never creates, edits, transitions or comments on a Jira issue. It only reads.</p>
+        </section>
+
+        <section id="stores">
+          <h2 id="what-it-stores">What it stores<a class="h-anchor" href="#what-it-stores" aria-label="Link to this section">#</a></h2>
+          <p>In Forge storage, scoped to your site: the leads, contacts, companies, deals, products, tasks, notes and product line items your users create, the audit trail (the latest 500 entries), each person's saved views, and the workspace settings (currency and stale-deal threshold).</p>
+          <p>Contacts, companies and leads can include the personal details of <em>your</em> customers and prospects, such as names, email addresses, phone numbers, job titles and LinkedIn links. That data belongs to you: you decide what to enter, and you are responsible for having a lawful basis to keep it.</p>
+          <div class="not-list">
+            <span class="not-pill">passwords</span>
+            <span class="not-pill">API tokens</span>
+            <span class="not-pill">payment details</span>
+            <span class="not-pill">Jira issue content beyond what's listed above</span>
+          </div>
+        </section>
+
+        <section id="personal-data">
+          <h2 id="atlassian-account-data">Atlassian account data<a class="h-anchor" href="#atlassian-account-data" aria-label="Link to this section">#</a></h2>
+          <p>The app stores the Atlassian account ID of the people who appear on records: the owner or assignee, and the person who created or last changed a record or made an audit-trail entry. It stores display names only for the moment they are shown. It stores no Atlassian email address, password or token.</p>
+        </section>
+
+        <section id="retention">
+          <h2 id="retention-deletion">Retention &amp; deletion<a class="h-anchor" href="#retention-deletion" aria-label="Link to this section">#</a></h2>
+          <p>Data stays in your site's Forge storage until your users delete it in the app, or until the app is uninstalled. Deleting a record in the app is permanent. Deleting a deal also deletes its line items and notes; the audit trail keeps a line saying it was deleted until that line ages out. Removal of storage after uninstall follows Atlassian's own Forge retention policy.</p>
+        </section>
+
+        <section id="location">
+          <h2 id="where-data-is-stored">Where data is stored<a class="h-anchor" href="#where-data-is-stored" aria-label="Link to this section">#</a></h2>
+          <p>Inside Atlassian's own Forge storage platform, in the same data residency as the rest of your Jira site. Nothing leaves Atlassian's infrastructure: the app declares no permission to call any external service.</p>
+        </section>
+
+        <section id="logs">
+          <h2 id="logs-2">Logs<a class="h-anchor" href="#logs-2" aria-label="Link to this section">#</a></h2>
+          <p>The app writes very little to logs, for example the number of old audit entries it removed. It does not write the contents of records to logs.</p>
+        </section>
+
+        <section id="tracking">
+          <h2 id="analytics-tracking">Analytics &amp; tracking<a class="h-anchor" href="#analytics-tracking" aria-label="Link to this section">#</a></h2>
+          <p>None. The app contains no analytics, no tracking pixels, no advertising and no third-party scripts of any kind.</p>
+        </section>
+
+        <section id="rights">
+          <h2 id="your-rights">Your rights<a class="h-anchor" href="#your-rights" aria-label="Link to this section">#</a></h2>
+          <p>Because we hold no copy of your data outside your own Forge storage, requests to access, correct or delete it are handled directly in the app by your own users and administrators. Anyone who can open the app can find, edit and delete a person's record. If you have a question we have not answered here, contact us using the details below.</p>
+        </section>
+
+        <section id="changes">
+          <h2 id="changes-to-this-policy">Changes to this policy<a class="h-anchor" href="#changes-to-this-policy" aria-label="Link to this section">#</a></h2>
+          <p>If what the app reads, writes or stores changes, this page changes with it.</p>
+        </section>
+
+        <section id="contact">
+          <h2 id="contact-2">Contact<a class="h-anchor" href="#contact-2" aria-label="Link to this section">#</a></h2>
+          <p><a href="mailto:info@vudia.site">info@vudia.site</a></p>
+        </section>
+    <div class="pagenav"><a class="prev" href="changelog.html"><small>Previous</small>What&#x27;s new</a><a class="next" href="security.html"><small>Next</small>Security policy</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#summary-2">Summary</a>
+    <a href="#what-it-reads-from-jira">What it reads from Jira</a>
+    <a href="#what-it-writes-to-jira">What it writes to Jira</a>
+    <a href="#what-it-stores">What it stores</a>
+    <a href="#atlassian-account-data">Atlassian account data</a>
+    <a href="#retention-deletion">Retention & deletion</a>
+    <a href="#where-data-is-stored">Where data is stored</a>
+    <a href="#logs-2">Logs</a>
+    <a href="#analytics-tracking">Analytics & tracking</a>
+    <a href="#your-rights">Your rights</a>
+    <a href="#changes-to-this-policy">Changes to this policy</a>
+    <a href="#contact-2">Contact</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

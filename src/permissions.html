@@ -1,0 +1,23 @@
+<!--meta {"title": "Permissions and access", "desc": "Who can do what in the app, and which Jira permissions the app itself asks for."} -->
+<h2>Who can do what</h2>
+<p>The app has <strong>no roles of its own</strong>. Anyone who can open the app can see and change every record in it: there is no private lead, deal or contact. Treat access to the app as access to your whole customer list.</p>
+<div class="tablewrap"><table>
+  <tr><th>Action</th><th>Any user of the app</th><th>Jira administrator</th></tr>
+  <tr><td>View records, reports and the audit trail</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Create, edit, delete and merge records</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Import, export, bulk actions</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Save your own views</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Change <a href="settings.html">Settings</a> (currency, stale threshold)</td><td>No</td><td>Yes</td></tr>
+</table></div>
+<p><strong>Owner</strong> and <strong>assignee</strong> are labels that say who is responsible. They do not restrict who can edit the record.</p>
+<p>Who can open the app at all is controlled by Jira: the Apps menu entry is available to people who can use Jira on the site.</p>
+
+<h2>What the app asks of Jira</h2>
+<p>Installing the app asks a Jira administrator to approve three permissions:</p>
+<div class="tablewrap"><table>
+  <tr><th>Permission</th><th>What it is used for</th></tr>
+  <tr><td><code>storage:app</code></td><td>The app's own storage, where your records are kept.</td></tr>
+  <tr><td><code>read:jira-work</code></td><td>Checking that a work item key you type exists and showing its summary and status.</td></tr>
+  <tr><td><code>read:jira-user</code></td><td>Showing people's names and searching for people in the owner and assignee pickers.</td></tr>
+</table></div>
+<p>The app has no permission to create, edit or comment on anything in Jira. Every Jira lookup is made as the signed-in user, so it sees only what that person can see.</p>

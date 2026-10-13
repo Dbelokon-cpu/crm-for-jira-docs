@@ -1,0 +1,14 @@
+<!--meta {"title": "Linking to Jira and sharing records", "desc": "Point a record at the Jira work item that delivers it, and send a colleague straight to a record."} -->
+<h2>Linking a record to a work item</h2>
+<p>Leads, contacts, companies and deals have a <strong>Jira work item</strong> field. Type a key such as <code>PROJ-123</code> and save.</p>
+<p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. If it does, the record then shows the item's summary and status next to the key, so a deal can point at the ticket that delivers it. The key is looked up at the moment you save; a later change to the item's summary or status is not pulled in until you save the record again.</p>
+<ul>
+  <li>Keys are not case sensitive: <code>proj-123</code> is stored as <code>PROJ-123</code>.</li>
+  <li>If the key does not exist, or you cannot see it, the save is refused with a message.</li>
+  <li>The app only <strong>reads</strong> the work item. It never changes anything in Jira.</li>
+</ul>
+
+<h2 id="sharing-records">Sharing records</h2>
+<p>Every record card has its own web address. When you open a card, the address in your browser changes to point at it, and changes back when you close it. Copy it from the address bar and paste it into a Jira comment, an email or a chat message; whoever opens it (and has access to the app) lands directly on the same record.</p>
+<p>The address carries the record's id in a parameter named for its section: <code>selectedDealId</code>, <code>selectedLeadId</code>, <code>selectedContactId</code>, <code>selectedCompanyId</code>, <code>selectedProductId</code> or <code>selectedTaskId</code>.</p>
+<div class="callout"><p>If you open a link to a record that has since been deleted, the app opens normally and there is no card to show.</p></div>

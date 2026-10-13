@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk actions, import and export · CRM for Jira documentation</title>
+<meta name="description" content="Change many records at once, bring in existing data from a spreadsheet, and take data out.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html" aria-current="page">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
+    <h1>Bulk actions, import and export</h1>
+    <p class="subtitle">Change many records at once, bring in existing data from a spreadsheet, and take data out.</p>
+    <h2 id="bulk-actions">Bulk actions<a class="h-anchor" href="#bulk-actions" aria-label="Link to this section">#</a></h2>
+    <p>Tick the boxes at the start of rows to select them. Buttons for the actions available in that section appear above the list.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Section</th><th>You can</th></tr>
+      <tr><td>Leads</td><td>Assign, change status, change rating, delete</td></tr>
+      <tr><td>Deals</td><td>Assign owner, change stage, delete</td></tr>
+      <tr><td>Contacts, Companies</td><td>Assign owner, delete</td></tr>
+      <tr><td>Products</td><td>Delete</td></tr>
+      <tr><td>Tasks</td><td>Assign, change priority, complete, delete</td></tr>
+    </table></div>
+    <p>Deleting asks you to confirm and states how many records will go. Bulk deletion cannot be undone.</p>
+
+    <h2 id="import">Import from CSV<a class="h-anchor" href="#import" aria-label="Link to this section">#</a></h2>
+    <p>Press <strong>Import CSV</strong> on Contacts, Companies, Leads, Deals, Products or Tasks.</p>
+    <ol class="steps">
+      <li>In your spreadsheet, make the <strong>first row the column names</strong>, then export or copy it as CSV text.</li>
+      <li>Paste the text into the window. It lists the column names it recognises; use those names exactly.</li>
+      <li>Press <strong>Import</strong>.</li>
+    </ol>
+    <p>Each row is checked exactly as if you had typed it into the form. A row with, say, an invalid email address is skipped and listed with the reason; the other rows are still imported. Only the name is required.</p>
+    <div class="example">
+      <strong>Example: importing contacts</strong>
+      <div class="tablewrap"><table>
+        <tr><th>Name</th><th>Title</th><th>Company</th><th>Email</th><th>Phone</th><th>Tags</th></tr>
+        <tr><td>Sarah Miller</td><td>Head of Operations</td><td>Northwind Traders</td><td>sarah@example.com</td><td>+1 555 0100</td><td>partner</td></tr>
+      </table></div>
+      <p>The columns it recognises for contacts are <code>Name</code>, <code>Title</code>, <code>Company</code>, <code>Email</code>, <code>Secondary Email</code>, <code>Phone</code>, <code>LinkedIn</code>, <code>Tags</code> and <code>Jira Work Item</code>. A company is matched by name to one that already exists, so import companies first.</p>
+    </div>
+    <div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records. Check the result, and use <a href="reports.html#data-quality">Potential Duplicates</a> if you have to clean up.</p></div>
+
+    <h2 id="export-to-csv">Export to CSV<a class="h-anchor" href="#export-to-csv" aria-label="Link to this section">#</a></h2>
+    <p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those.</p>
+    <p>Several report tables have their own <strong>Export to CSV</strong> button, and <a href="settings.html">Settings</a> can export everything.</p>
+    <p>The app shows CSV as text, not as a download, because the page it runs in cannot start a file download.</p>
+    <div class="pagenav"><a class="prev" href="finding.html"><small>Previous</small>Search, filters and saved views</a><a class="next" href="dashboard.html"><small>Next</small>Dashboard</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#bulk-actions">Bulk actions</a>
+    <a href="#import">Import from CSV</a>
+    <a href="#export-to-csv">Export to CSV</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

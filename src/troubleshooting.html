@@ -1,0 +1,74 @@
+<!--meta {"title": "Troubleshooting", "desc": "Symptom, likely cause and what to do, for the problems people meet most often."} -->
+<p>Find the symptom, check the cause, follow the fix. If nothing here helps, see <a href="faq.html#support">support</a>.</p>
+
+<h2>Saving and entering data</h2>
+
+<h3>A record will not save</h3>
+<div class="tablewrap"><table>
+  <tr><th>Check</th><th>What to do</th></tr>
+  <tr><td>Is the name filled in?</td><td>It is the only required field on most records.</td></tr>
+  <tr><td>Does the message mention an email?</td><td>The address must look like an email, and two contacts or two leads cannot share one. Find the existing record with search.</td></tr>
+  <tr><td>Does it mention a phone number?</td><td>Use 7 to 20 characters: digits, spaces and <code>+ - ( ) .</code></td></tr>
+  <tr><td>Is it a Jira work item key?</td><td>It must look like <code>PROJ-123</code>, exist, and be visible to you. See <a href="jira.html">Linking to Jira</a>.</td></tr>
+  <tr><td>Is it a date?</td><td>Type it as <code>YYYY-MM-DD</code>, for example <code>2026-11-30</code>.</td></tr>
+</table></div>
+
+<h3>Saving seems slow</h3>
+<p><strong>Cause:</strong> a save goes to the server and back before the window closes. <strong>Fix:</strong> wait for the window to close. Pressing the button again can create a second copy. If saves are consistently slow, see <a href="limits.html#how-much-data-is-comfortable">how much data is comfortable</a>.</p>
+
+<h3>I cannot change Settings</h3>
+<p><strong>Cause:</strong> only a Jira administrator can. <strong>Fix:</strong> ask one. See <a href="permissions.html">Permissions and access</a>.</p>
+
+<h2>Records and lists</h2>
+
+<h3>A list is empty but I know the records exist</h3>
+<p><strong>Cause:</strong> a filter or a search is still on. <strong>Fix:</strong> clear the search box and click any highlighted tile or filter to turn it off. A saved view you clicked earlier also sets filters.</p>
+
+<h3>The deals board is not what I expected</h3>
+<ul>
+  <li>A deal shows in the column of its <strong>stage</strong>. If one is missing, check the <em>Lost</em> and <em>Won</em> columns at the end.</li>
+  <li>Filters apply to the board as well as the table.</li>
+  <li>You cannot drag cards. Use the stage selector.</li>
+</ul>
+
+<h3>A deal's amount changed on its own</h3>
+<p><strong>Cause:</strong> once a deal has products attached, its amount follows them. <strong>Fix:</strong> change the line items, not the amount.</p>
+
+<h3>Converting a lead made a contact and a company I did not expect</h3>
+<p><strong>Cause:</strong> converting uses the lead's linked contact and company, or a company with the same name; if there is none, it creates them from the names on the lead. <strong>Fix:</strong> link the lead to existing records before converting, or <a href="contacts-companies.html#merging-duplicates">merge</a> afterwards.</p>
+
+<h3>I deleted or merged something by mistake</h3>
+<p>Neither can be undone, because the app has no recycle bin. The <a href="activities.html">audit trail</a> shows what was removed and by whom, so you can re-enter it.</p>
+
+<h2>Numbers</h2>
+
+<h3>The Dashboard and a report show different numbers</h3>
+<ul>
+  <li>The Dashboard's performance tiles use 7, 30 or 90 days or all time; reports use calendar periods such as <em>This month</em>. Check the period on both.</li>
+  <li>A Dashboard filtered to one assignee only counts that person.</li>
+</ul>
+
+<h3>Win rate shows a dash</h3>
+<p><strong>Cause:</strong> no deals were won or lost in the period, so there is nothing to divide. Open deals are not counted.</p>
+
+<h3>The currency looks wrong</h3>
+<p><strong>Cause:</strong> changing the currency in Settings changes the symbol only; it does not convert. An amount entered as 1,000 euros is now shown as 1,000 dollars. <strong>Fix:</strong> change the currency back, or re-enter the amounts.</p>
+
+<h3>The Activities list is missing older changes</h3>
+<p><strong>Cause:</strong> only the latest 500 entries are kept. See <a href="activities.html#how-much-is-kept">how much is kept</a>.</p>
+
+<h2>Import and export</h2>
+
+<h3>Import skipped some rows</h3>
+<p>The result lists each skipped row with the reason. The usual causes are a missing name, an invalid email or phone number, or an email that already exists. Fix those rows and import only them again.</p>
+
+<h3>Import created duplicates</h3>
+<p><strong>Cause:</strong> import does not look for existing records, so a second import adds a second copy. <strong>Fix:</strong> open <a href="reports.html#data-quality">Reports → Potential Duplicates</a> and merge.</p>
+
+<h3>A company or contact did not link on import</h3>
+<p><strong>Cause:</strong> the name must match an existing company or contact exactly (capital letters do not matter). <strong>Fix:</strong> import companies first, and check spelling.</p>
+
+<h2>Links</h2>
+
+<h3>A link to a record opens the app but not the record</h3>
+<p><strong>Cause:</strong> the record was deleted, or the link was cut when copied. <strong>Fix:</strong> copy the address again from the open card, in full.</p>

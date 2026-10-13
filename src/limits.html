@@ -1,0 +1,32 @@
+<!--meta {"title": "Limits and behaviour", "desc": "Every limit and fixed behaviour in one place: sizes, formats and what happens at the edges."} -->
+<h2>Limits</h2>
+<div class="tablewrap"><table>
+  <tr><th>What</th><th>Limit</th><th>What happens at the limit</th></tr>
+  <tr><td>Length of a text field (name, title, address and so on)</td><td class="num">255</td><td>Anything longer is cut off when saved.</td></tr>
+  <tr><td>Length of a note</td><td class="num">2,000</td><td>Cut off when saved.</td></tr>
+  <tr><td>Length of a saved view's name</td><td class="num">60</td><td>Refused.</td></tr>
+  <tr><td>Stale threshold</td><td class="num">1–365 days</td><td>Refused outside the range.</td></tr>
+  <tr><td>Entries kept in the audit trail</td><td class="num">500</td><td>The oldest are removed as new ones arrive. See <a href="activities.html">Activities</a>.</td></tr>
+  <tr><td>Activities shown on screen</td><td class="num">100</td><td>The newest 100 of those kept.</td></tr>
+  <tr><td>Search results per record type</td><td class="num">10</td><td>The count of all matches is still shown.</td></tr>
+</table></div>
+
+<h2>How much data is comfortable</h2>
+<p>The app loads your records when it opens and does the searching, sorting and filtering in your browser. That makes it quick and simple for a small team. It also means that the more records you have, the longer it takes to open, and the longer reports take to calculate.</p>
+<p>A few thousand records per section is comfortable. If the app starts to feel slow to open or to save, tell your administrator and <a href="faq.html#support">contact support</a>. Pages that need to look at everything, such as global search, Potential Duplicates and some of the revenue reports, feel it first.</p>
+
+<h2>Behaviour</h2>
+<div class="tablewrap"><table>
+  <tr><th>Topic</th><th>How it behaves</th></tr>
+  <tr><td>Currency</td><td>One currency for the whole workspace, set in Settings. Amounts are never converted.</td></tr>
+  <tr><td>Pipeline</td><td>One pipeline with six fixed stages. They cannot be renamed or added to.</td></tr>
+  <tr><td>Dates</td><td>Typed as <code>YYYY-MM-DD</code>. There is no date picker.</td></tr>
+  <tr><td>Phone numbers</td><td>7 to 20 characters: digits, spaces, <code>+ - ( ) .</code></td></tr>
+  <tr><td>Email addresses</td><td>Must look like an email. Two contacts, or two leads, cannot share one.</td></tr>
+  <tr><td>Amounts and prices</td><td>Zero or more.</td></tr>
+  <tr><td>Drag and drop</td><td>Not available. Change a deal's stage with its selector.</td></tr>
+  <tr><td>Export and import</td><td>CSV as text you copy and paste, not as a file download.</td></tr>
+  <tr><td>Saved views</td><td>Belong to the person who made them.</td></tr>
+  <tr><td>Deleting</td><td>Permanent. There is no recycle bin.</td></tr>
+  <tr><td>Jira data</td><td>Only read, never changed. See <a href="privacy.html">Privacy</a>.</td></tr>
+</table></div>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports · CRM for Jira documentation</title>
+<meta name="description" content="Breakdowns of pipeline, leads, revenue, outcomes and data quality, a period comparison, and a snapshot you can paste into a Jira comment.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html" aria-current="page">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
+    <h1>Reports</h1>
+    <p class="subtitle">Breakdowns of pipeline, leads, revenue, outcomes and data quality, a period comparison, and a snapshot you can paste into a Jira comment.</p>
+    <h2 id="reports-and-the-period">Reports and the period<a class="h-anchor" href="#reports-and-the-period" aria-label="Link to this section">#</a></h2>
+    <p>Open <strong>Reports</strong>. The page is a set of cards in sections. Pick a period at the top (<em>This month</em>, <em>Last month</em>, <em>This quarter</em>, <em>This year</em> or <em>Last 30 days</em>) to see the figures that depend on time.</p>
+
+    <h2 id="compare-with-the-previous-period">Compare with the previous period<a class="h-anchor" href="#compare-with-the-previous-period" aria-label="Link to this section">#</a></h2>
+    <p>The comparison card sets the chosen period against the one before it: <strong>won value</strong>, <strong>deals won</strong>, <strong>deals lost</strong>, <strong>win rate</strong> and <strong>deals created</strong>, with the change in each. For win rate the change is in percentage points. It can be exported to CSV.</p>
+
+    <h2 id="report-snapshot">Report snapshot<a class="h-anchor" href="#report-snapshot" aria-label="Link to this section">#</a></h2>
+    <p>Press <strong>Report snapshot</strong> for a short text summary of the period. Select it all (Ctrl+A or Cmd+A), copy it and paste it into a Jira comment, a Confluence page or a chat message; they all display it formatted. It is a good way to put the week's numbers in front of people who do not open the app.</p>
+
+    <h2 id="pipeline">Pipeline<a class="h-anchor" href="#pipeline" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Deals by Stage</strong> and <strong>Pipeline Value by Stage</strong></li>
+      <li><strong>Forecast by Close Month</strong>: expected value by the deals' close dates</li>
+      <li><strong>Open Pipeline by Owner</strong></li>
+      <li><strong>Average Days per Stage</strong>: where deals wait</li>
+      <li><strong>Deals by Type</strong></li>
+    </ul>
+
+    <h2 id="leads">Leads<a class="h-anchor" href="#leads" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Leads by Status, Source and Rating</strong></li>
+      <li><strong>Conversion Rate by Source</strong> and <strong>by Rating</strong>: which sources and ratings really turn into deals</li>
+      <li><strong>Lost Leads by Reason</strong></li>
+    </ul>
+
+    <h2 id="revenue">Revenue<a class="h-anchor" href="#revenue" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Revenue by Lead Source</strong>, <strong>by Product</strong> and <strong>by Category</strong>: what won deals brought in</li>
+      <li><strong>Sales Performance by Assignee</strong>, with CSV export</li>
+    </ul>
+
+    <h2 id="deal-outcomes">Deal outcomes<a class="h-anchor" href="#deal-outcomes" aria-label="Link to this section">#</a></h2>
+    <p><strong>Won Deals by Reason</strong> and <strong>Lost Deals by Reason</strong>. These are only as good as the reasons people choose when they close a deal.</p>
+
+    <h2 id="accounts-products-and-operations">Accounts, products and operations<a class="h-anchor" href="#accounts-products-and-operations" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Companies by Industry</strong> and <strong>by Size</strong></li>
+      <li><strong>Products by Category</strong> and <strong>Deal Contacts by Product</strong> (who bought what)</li>
+      <li><strong>Tasks by Type</strong>, <strong>by Priority</strong> and <strong>Task Load by Assignee</strong></li>
+    </ul>
+
+    <h2 id="data-quality">Data quality<a class="h-anchor" href="#data-quality" aria-label="Link to this section">#</a></h2>
+    <p><strong>Potential Duplicates</strong> lists records that probably describe the same thing: companies with the same name or website, contacts with the same email or phone, products with the same SKU. Open each and <a href="contacts-companies.html#merging-duplicates">merge</a> where it is a real duplicate.</p>
+
+    <div class="callout"><p>Reports are calculated from the records in the app at the moment you open them, so they are always current. They can be a little slow on a site with a lot of data: see <a href="limits.html">Limits and behaviour</a>.</p></div>
+    <div class="pagenav"><a class="prev" href="dashboard.html"><small>Previous</small>Dashboard</a><a class="next" href="activities.html"><small>Next</small>Activities</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#reports-and-the-period">Reports and the period</a>
+    <a href="#compare-with-the-previous-period">Compare with the previous period</a>
+    <a href="#report-snapshot">Report snapshot</a>
+    <a href="#pipeline">Pipeline</a>
+    <a href="#leads">Leads</a>
+    <a href="#revenue">Revenue</a>
+    <a href="#deal-outcomes">Deal outcomes</a>
+    <a href="#accounts-products-and-operations">Accounts, products and operations</a>
+    <a href="#data-quality">Data quality</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

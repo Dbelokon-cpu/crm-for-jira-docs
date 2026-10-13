@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deals · CRM for Jira documentation</title>
+<meta name="description" content="Create deals, move them through the pipeline on a board or in a table, attach products, and close them as won or lost.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html" aria-current="page">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
+    <h1>Deals</h1>
+    <p class="subtitle">Create deals, move them through the pipeline on a board or in a table, attach products, and close them as won or lost.</p>
+    <h2 id="add-a-deal">Add a deal<a class="h-anchor" href="#add-a-deal" aria-label="Link to this section">#</a></h2>
+    <p>Open <strong>Deals</strong> and press <strong>Create Deal</strong>, or <a href="leads.html#converting-a-lead">convert a lead</a>. Fields:</p>
+    <div class="tablewrap"><table>
+      <tr><th>Field</th><th>What it is for</th></tr>
+      <tr><td>Name</td><td>Required.</td></tr>
+      <tr><td>Amount</td><td>Zero or more, in the currency set in <a href="settings.html">Settings</a>. Once you attach products, the amount follows them.</td></tr>
+      <tr><td>Stage</td><td>One of the <a href="pipeline.html">six stages</a>.</td></tr>
+      <tr><td>Close date</td><td>When you expect to close. Used by the forecast by month. A deal past its close date is flagged overdue.</td></tr>
+      <tr><td>Next step and its due date</td><td>What happens next. Deals with no next step can be found with the <em>No Next Step</em> filter.</td></tr>
+      <tr><td>Type</td><td>New Business, Existing Business or Renewal.</td></tr>
+      <tr><td>Win probability</td><td>Optional. Replaces the stage's default for this deal.</td></tr>
+      <tr><td>Contact, company</td><td>Who you are selling to.</td></tr>
+      <tr><td>Owner</td><td>Who is responsible for the deal.</td></tr>
+      <tr><td>Jira work item</td><td>Optional. See <a href="jira.html">Linking to Jira</a>.</td></tr>
+    </table></div>
+    <p>Dates are typed as <code>YYYY-MM-DD</code>, for example <code>2026-11-30</code>. The app has no date picker.</p>
+
+    <h2 id="board-and-table">Board and table<a class="h-anchor" href="#board-and-table" aria-label="Link to this section">#</a></h2>
+    <p>Deals open as a <strong>Kanban</strong> board: one column per stage, with the number of deals and their total value at the top of each. Press <strong>Table view</strong> for a sortable list and <strong>Kanban view</strong> to go back. Stale deals carry a badge showing how many days they have sat in their stage.</p>
+    <p>Cards cannot be dragged between columns. Change the stage with the stage selector on the card or in the table row.</p>
+
+    <h2 id="products-on-a-deal">Products on a deal<a class="h-anchor" href="#products-on-a-deal" aria-label="Link to this section">#</a></h2>
+    <p>Open a deal and add products from your <a href="products.html">catalogue</a> as line items. The deal's amount is kept in step with the line items, so you do not have to add them up. A line item keeps the price it had when you added it, so changing the catalogue price later does not rewrite existing deals.</p>
+
+    <h2 id="winning-and-losing">Winning and losing<a class="h-anchor" href="#winning-and-losing" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li>Press <strong>Mark as Won</strong> and choose a reason. The stage becomes <em>Won</em>.</li>
+      <li>Press <strong>Mark as Lost</strong> and choose a reason. The stage becomes <em>Lost</em>.</li>
+    </ul>
+    <p>The reasons feed <a href="reports.html#deal-outcomes">Deal outcomes</a>. Won deals count in the Dashboard's <em>Deals Won</em> and in the win rate.</p>
+
+    <h2 id="deleting-a-deal">Deleting a deal<a class="h-anchor" href="#deleting-a-deal" aria-label="Link to this section">#</a></h2>
+    <p>You are asked to confirm. Deleting removes the deal's line items and notes with it. The deal's history stays in <a href="activities.html">Activities</a> until it ages out.</p>
+    <div class="pagenav"><a class="prev" href="leads.html"><small>Previous</small>Leads</a><a class="next" href="contacts-companies.html"><small>Next</small>Contacts and companies</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#add-a-deal">Add a deal</a>
+    <a href="#board-and-table">Board and table</a>
+    <a href="#products-on-a-deal">Products on a deal</a>
+    <a href="#winning-and-losing">Winning and losing</a>
+    <a href="#deleting-a-deal">Deleting a deal</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

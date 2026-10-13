@@ -1,0 +1,35 @@
+<!--meta {"title": "Bulk actions, import and export", "desc": "Change many records at once, bring in existing data from a spreadsheet, and take data out."} -->
+<h2>Bulk actions</h2>
+<p>Tick the boxes at the start of rows to select them. Buttons for the actions available in that section appear above the list.</p>
+<div class="tablewrap"><table>
+  <tr><th>Section</th><th>You can</th></tr>
+  <tr><td>Leads</td><td>Assign, change status, change rating, delete</td></tr>
+  <tr><td>Deals</td><td>Assign owner, change stage, delete</td></tr>
+  <tr><td>Contacts, Companies</td><td>Assign owner, delete</td></tr>
+  <tr><td>Products</td><td>Delete</td></tr>
+  <tr><td>Tasks</td><td>Assign, change priority, complete, delete</td></tr>
+</table></div>
+<p>Deleting asks you to confirm and states how many records will go. Bulk deletion cannot be undone.</p>
+
+<h2 id="import">Import from CSV</h2>
+<p>Press <strong>Import CSV</strong> on Contacts, Companies, Leads, Deals, Products or Tasks.</p>
+<ol class="steps">
+  <li>In your spreadsheet, make the <strong>first row the column names</strong>, then export or copy it as CSV text.</li>
+  <li>Paste the text into the window. It lists the column names it recognises; use those names exactly.</li>
+  <li>Press <strong>Import</strong>.</li>
+</ol>
+<p>Each row is checked exactly as if you had typed it into the form. A row with, say, an invalid email address is skipped and listed with the reason; the other rows are still imported. Only the name is required.</p>
+<div class="example">
+  <strong>Example: importing contacts</strong>
+  <div class="tablewrap"><table>
+    <tr><th>Name</th><th>Title</th><th>Company</th><th>Email</th><th>Phone</th><th>Tags</th></tr>
+    <tr><td>Sarah Miller</td><td>Head of Operations</td><td>Northwind Traders</td><td>sarah@example.com</td><td>+1 555 0100</td><td>partner</td></tr>
+  </table></div>
+  <p>The columns it recognises for contacts are <code>Name</code>, <code>Title</code>, <code>Company</code>, <code>Email</code>, <code>Secondary Email</code>, <code>Phone</code>, <code>LinkedIn</code>, <code>Tags</code> and <code>Jira Work Item</code>. A company is matched by name to one that already exists, so import companies first.</p>
+</div>
+<div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records. Check the result, and use <a href="reports.html#data-quality">Potential Duplicates</a> if you have to clean up.</p></div>
+
+<h2>Export to CSV</h2>
+<p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those.</p>
+<p>Several report tables have their own <strong>Export to CSV</strong> button, and <a href="settings.html">Settings</a> can export everything.</p>
+<p>The app shows CSV as text, not as a download, because the page it runs in cannot start a file download.</p>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security policy · CRM for Jira documentation</title>
+<meta name="description" content="How this app is built, what it can access, and how we handle a security report. For the technical reviewer, not just the end user.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html" aria-current="page">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Policies</div>
+    <h1>Security policy</h1>
+    <p class="subtitle">How this app is built, what it can access, and how we handle a security report. For the technical reviewer, not just the end user.</p>
+    <section id="architecture">
+          <h2 id="architecture-and-hosting">Architecture and hosting<a class="h-anchor" href="#architecture-and-hosting" aria-label="Link to this section">#</a></h2>
+          <p>CRM for Jira is built entirely on Atlassian Forge, in UI Kit (not Custom UI), so its interface is rendered by the platform itself, not by code we serve. It has no servers, databases or infrastructure of its own: it stores no data outside Atlassian, and its manifest declares no permission to make an outbound network call to anything other than Atlassian's own APIs.</p>
+          <p>Transport security, encryption, physical security and patching of the underlying platform are Atlassian's responsibility, covered by Atlassian's own compliance programme for Forge.</p>
+        </section>
+
+        <section id="data">
+          <h2 id="data-we-handle">Data we handle<a class="h-anchor" href="#data-we-handle" aria-label="Link to this section">#</a></h2>
+          <p>The app handles the records your users type in. It reads a Jira work item's summary and status live when a user links one, and people's names to display. It holds no permission to create, edit, transition or comment on an issue, so it cannot write to Jira at all. Full detail on what is and is not kept is in the <a href="privacy.html">privacy policy</a>.</p>
+        </section>
+
+        <section id="auth">
+          <h2 id="authentication-and-access-control">Authentication and access control<a class="h-anchor" href="#authentication-and-access-control" aria-label="Link to this section">#</a></h2>
+          <p>There is no independent login system. Every request runs as the signed-in Jira user, authenticated by Forge through their existing Jira session. We never collect, transmit or store Atlassian usernames, passwords or API tokens.</p>
+          <p>Inside the app there are no roles: anyone who can open it can read and change every record (see <a href="permissions.html">Permissions and access</a>). The one exception is workspace settings, which the server only accepts from a user who holds Jira's site <code>ADMINISTER</code> permission, checked on every save. Access is bounded by the scopes declared in the manifest:</p>
+          <div class="scope-list">
+            <div class="scope-item"><code>read:jira-work</code><span>check that a work item exists and read its summary and status</span></div>
+            <div class="scope-item"><code>read:jira-user</code><span>show people's names, search users for the owner and assignee pickers</span></div>
+            <div class="scope-item"><code>storage:app</code><span>the app's own Forge key-value store</span></div>
+          </div>
+          <p>No Jira write scope is declared anywhere in the manifest. Every Jira call is made as the signed-in user (<code>asUser</code>), so Jira's own permissions apply.</p>
+        </section>
+
+        <section id="practices">
+          <h2 id="input-handling">Input handling<a class="h-anchor" href="#input-handling" aria-label="Link to this section">#</a></h2>
+          <p>Every server function validates what it receives before using it: record ids must be well-formed UUIDs, text is trimmed and length-limited, choices (stages, statuses, sources, ratings, reasons, currencies) are checked against fixed lists, numbers must be finite and non-negative, and account ids and Jira work item keys must match strict patterns. Saved-view filters are limited to a fixed set of keys. The app was reviewed against the OWASP list of common weaknesses and hardened where needed.</p>
+        </section>
+
+        <section id="report">
+          <h2 id="reporting-a-vulnerability">Reporting a vulnerability<a class="h-anchor" href="#reporting-a-vulnerability" aria-label="Link to this section">#</a></h2>
+          <p>Email <a href="mailto:security@vudia.site">security@vudia.site</a> with what you found, the steps to reproduce it, and which part of the app it affects. Please do not publish details until we have had a chance to fix it. For general support, use <a href="mailto:info@vudia.site">info@vudia.site</a>.</p>
+        </section>
+    <div class="pagenav"><a class="prev" href="privacy.html"><small>Previous</small>Privacy policy</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#architecture-and-hosting">Architecture and hosting</a>
+    <a href="#data-we-handle">Data we handle</a>
+    <a href="#authentication-and-access-control">Authentication and access control</a>
+    <a href="#input-handling">Input handling</a>
+    <a href="#reporting-a-vulnerability">Reporting a vulnerability</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

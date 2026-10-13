@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leads · CRM for Jira documentation</title>
+<meta name="description" content="Capture prospects, rate and assign them, work them on a board or in a table, and convert the good ones into deals.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="index.html">
+      <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+    </a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
+      <div class="search-results" id="results" hidden></div>
+    </div>
+    <details class="nav-wrap" open>
+      <summary>Menu</summary>
+      <nav class="toc" aria-label="Documentation">
+        <span class="toc-group-label">Start</span>
+        <a href="index.html">Overview</a>
+        <a href="quick-start.html">Quick start</a>
+        <span class="toc-group-label">Concepts</span>
+        <a href="pipeline.html">Leads, deals and the pipeline</a>
+        <a href="records.html">Records, notes and timeline</a>
+        <span class="toc-group-label">Guides</span>
+        <a href="leads.html" aria-current="page">Leads</a>
+        <a href="deals.html">Deals</a>
+        <a href="contacts-companies.html">Contacts and companies</a>
+        <a href="products.html">Products</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="finding.html">Search, filters and saved views</a>
+        <a href="bulk-csv.html">Bulk actions, import and export</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="reports.html">Reports</a>
+        <a href="activities.html">Activities</a>
+        <a href="settings.html">Settings</a>
+        <a href="jira.html">Linking to Jira and sharing records</a>
+        <span class="toc-group-label">Reference</span>
+        <a href="limits.html">Limits and behaviour</a>
+        <a href="permissions.html">Permissions and access</a>
+        <a href="glossary.html">Glossary</a>
+        <span class="toc-group-label">Help</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="faq.html">FAQ and support</a>
+        <a href="changelog.html">What&#x27;s new</a>
+        <span class="toc-group-label">Policies</span>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="security.html">Security policy</a>
+      </nav>
+    </details>
+    <div class="meta-card">
+      <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
+    </div>
+  </aside>
+
+  <main id="content">
+    <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
+    <h1>Leads</h1>
+    <p class="subtitle">Capture prospects, rate and assign them, work them on a board or in a table, and convert the good ones into deals.</p>
+    <h2 id="add-a-lead">Add a lead<a class="h-anchor" href="#add-a-lead" aria-label="Link to this section">#</a></h2>
+    <p>Open <strong>Leads</strong> and press <strong>Create Lead</strong>. Only the name is required. The rest helps you decide whom to call first:</p>
+    <div class="tablewrap"><table>
+      <tr><th>Field</th><th>What it is for</th></tr>
+      <tr><td>Status</td><td>New, Contacted, Qualified, Converted or Lost.</td></tr>
+      <tr><td>Rating</td><td>Hot, Warm or Cold: how likely the lead is to buy.</td></tr>
+      <tr><td>Source</td><td>Where it came from: Web, Referral, Advertisement, Trade Show, Cold Call, Partner or Other. Reports use it to show which sources convert.</td></tr>
+      <tr><td>Assignee</td><td>Who is responsible. Leads with no assignee can be found with the <em>Unassigned</em> filter.</td></tr>
+      <tr><td>Contact and company</td><td>Link to an existing contact or company, or just type the names.</td></tr>
+      <tr><td>Email, phone</td><td>Checked for a sensible format. Two leads (or contacts) cannot share one email address.</td></tr>
+      <tr><td>Jira work item</td><td>Optional. See <a href="jira.html">Linking to Jira</a>.</td></tr>
+    </table></div>
+    <p>A lead can also carry <strong>products</strong>, the things the prospect asked about. They carry over when you convert.</p>
+
+    <h2 id="board-and-table">Board and table<a class="h-anchor" href="#board-and-table" aria-label="Link to this section">#</a></h2>
+    <p>Switch between <strong>Table</strong> and <strong>Kanban</strong> with the buttons above the list. The board has a column per status. The table has sortable columns (click a heading) and the same quick filters as everywhere: see <a href="finding.html">Search, filters and saved views</a>. The tiles above the list, such as <em>My Leads</em> and <em>Unassigned</em>, are filters too.</p>
+
+    <h2 id="converting-a-lead">Converting a lead<a class="h-anchor" href="#converting-a-lead" aria-label="Link to this section">#</a></h2>
+    <p>Open the lead and press <strong>Convert to Deal</strong>, then confirm. The app:</p>
+    <ul>
+      <li>creates a deal in the <em>New</em> stage, with an amount equal to the lead's products;</li>
+      <li>uses the lead's contact and company if they are linked, or finds a company with the same name, or <strong>creates</strong> a new contact and company from the names on the lead;</li>
+      <li>carries over the lead's products;</li>
+      <li>marks the lead <em>Converted</em> and links the two records both ways.</li>
+    </ul>
+    <p>The lead's card then shows the <strong>Converted deal</strong>, and you can open it from there.</p>
+
+    <h2 id="losing-a-lead">Losing a lead<a class="h-anchor" href="#losing-a-lead" aria-label="Link to this section">#</a></h2>
+    <p>Set the status to <em>Lost</em> and choose a reason: Unqualified, No Response, Not Interested, Duplicate, Wrong Contact or Other. <a href="reports.html#leads">Reports</a> count lost leads by reason, so a vague "Other" is a missed chance to learn something.</p>
+    <div class="pagenav"><a class="prev" href="records.html"><small>Previous</small>Records, notes and timeline</a><a class="next" href="deals.html"><small>Next</small>Deals</a></div>
+    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+  </main>
+
+  <nav class="toc-right" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#add-a-lead">Add a lead</a>
+    <a href="#board-and-table">Board and table</a>
+    <a href="#converting-a-lead">Converting a lead</a>
+    <a href="#losing-a-lead">Losing a lead</a>
+  </nav>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
