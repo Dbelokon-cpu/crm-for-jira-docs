@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Permissions and access · CRM for Jira documentation</title>
+<title>Permissions and access · Dealtrail CRM documentation</title>
 <meta name="description" content="Who can do what in the app, and which Jira permissions the app itself asks for.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html" aria-current="page">Permissions and access</a>
@@ -75,22 +79,26 @@
       <tr><td>Create, edit, delete and merge records</td><td>Yes</td><td>Yes</td></tr>
       <tr><td>Import, export, bulk actions</td><td>Yes</td><td>Yes</td></tr>
       <tr><td>Save your own views</td><td>Yes</td><td>Yes</td></tr>
-      <tr><td>Change <a href="settings.html">Settings</a> (currency, stale threshold)</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Change <a href="settings.html">Settings</a> (currency, stale threshold, deal stages, custom fields)</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Load Sample Data, Delete All Data</td><td>No</td><td>Yes</td></tr>
     </table></div>
     <p><strong>Owner</strong> and <strong>assignee</strong> are labels that say who is responsible. They do not restrict who can edit the record.</p>
     <p>Who can open the app at all is controlled by Jira: the Apps menu entry is available to people who can use Jira on the site.</p>
 
     <h2 id="what-the-app-asks-of-jira">What the app asks of Jira<a class="h-anchor" href="#what-the-app-asks-of-jira" aria-label="Link to this section">#</a></h2>
-    <p>Installing the app asks a Jira administrator to approve three permissions:</p>
+    <p>Installing the app asks a Jira administrator to approve five permissions:</p>
     <div class="tablewrap"><table>
       <tr><th>Permission</th><th>What it is used for</th></tr>
       <tr><td><code>storage:app</code></td><td>The app's own storage, where your records are kept.</td></tr>
       <tr><td><code>read:jira-work</code></td><td>Checking that a work item key you type exists and showing its summary and status.</td></tr>
+      <tr><td><code>write:jira-work</code></td><td>Writing the app's own read-only <a href="jql.html">CRM fields</a> on linked work items, and nothing else.</td></tr>
       <tr><td><code>read:jira-user</code></td><td>Showing people's names and searching for people in the owner and assignee pickers.</td></tr>
+      <tr><td><code>report:personal-data</code></td><td>Reporting the Atlassian account ids it holds, so that it can remove closed accounts. See the <a href="privacy.html#personal-data">privacy policy</a>.</td></tr>
     </table></div>
-    <p>The app has no permission to create, edit or comment on anything in Jira. Every Jira lookup is made as the signed-in user, so it sees only what that person can see.</p>
+    <p>The app never creates, transitions or comments on a work item. Every Jira lookup is made as the signed-in user, so it sees only what that person can see. The one exception is writing the app's own CRM fields, which Jira lets only the app itself do.</p>
+    <p><a href="automation.html">Automation</a> steps run as the person on the rule's connection, with that person's Jira permissions for checking the work item.</p>
     <div class="pagenav"><a class="prev" href="limits.html"><small>Previous</small>Limits and behaviour</a><a class="next" href="glossary.html"><small>Next</small>Glossary</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

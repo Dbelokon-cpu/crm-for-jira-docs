@@ -1,4 +1,4 @@
-<!--meta {"title": "Settings", "desc": "The currency, the stale-deal threshold and the data tools."} -->
+<!--meta {"title": "Settings", "desc": "The currency, the stale-deal threshold, your deal stages, custom fields and the data tools."} -->
 <h2>Workspace settings</h2>
 <div class="tablewrap"><table>
   <tr><th>Setting</th><th>What it does</th></tr>
@@ -7,8 +7,30 @@
 </table></div>
 <p>Press <strong>Save</strong> after changing a setting. Settings apply to everyone on the Jira site, so only a <strong>Jira administrator</strong> can change them; see <a href="permissions.html">Permissions and access</a>.</p>
 
-<h2>Data administration</h2>
-<p>Export all of your records from here, section by section, as CSV text. Use it for a backup or to move data into another tool.</p>
+<h2 id="deal-stages">Deal stages</h2>
+<p>A Jira administrator can change the stages a deal moves through before it is won or lost:</p>
+<ul>
+  <li>Rename a stage, or change its order with <strong>Up</strong> and <strong>Down</strong>.</li>
+  <li>Set each stage's win probability.</li>
+  <li>Press <strong>Add Stage</strong> to add one, up to 12.</li>
+  <li>Press <strong>Remove</strong> to take one out. If deals are still in it, choose the stage they move to.</li>
+</ul>
+<p>Press <strong>Save Stages</strong> to apply the changes. Deals in a removed stage move at that point, and the move is recorded on each deal's timeline. Won and Lost cannot be changed.</p>
+
+<h2>Custom fields</h2>
+<p>Fields of your own on contacts, companies, deals and leads. See <a href="custom-fields.html">Custom fields</a>.</p>
+
+<h2 id="data-administration">Data administration</h2>
+<p>For Jira administrators:</p>
+<div class="tablewrap"><table>
+  <tr><th>Tool</th><th>What it does</th></tr>
+  <tr><td>Export All Data</td><td>All your records as one CSV text, for a backup or to move data into another tool.</td></tr>
+  <tr><td>Load Sample Data</td><td>Adds a small example pipeline (companies, contacts, deals, leads, tasks and notes) so you can try every screen. It is added next to your own records, and loading it twice gives two copies.</td></tr>
+  <tr><td>Delete All Data</td><td>Removes every record, note and history entry. Type DELETE to confirm. Settings are kept. <strong>This cannot be undone.</strong></td></tr>
+</table></div>
+
+<h2 id="data-size">Data size</h2>
+<p>Press <strong>Count Records</strong> to see how many records each section holds. Sections are designed for up to 5,000 records each; one near or over that is marked, because opening it gets slower. See <a href="limits.html#how-much-data-is-comfortable">how much data is comfortable</a>.</p>
 
 <h2>Audit log</h2>
 <p>Shows how many <a href="activities.html">activity</a> entries are kept right now, out of the 500 the app holds.</p>

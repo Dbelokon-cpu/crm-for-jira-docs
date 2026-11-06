@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ and support · CRM for Jira documentation</title>
+<title>FAQ and support · Dealtrail CRM documentation</title>
 <meta name="description" content="Short answers to common questions, and how to reach support.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -71,13 +75,21 @@
       <dt>Do I need a separate login?</dt>
       <dd>No. You use your Jira account. Open the app from the Apps menu.</dd>
       <dt>Does the app change anything in Jira?</dt>
-      <dd>No. It only reads: a work item's summary and status when you link one, and people's names. It never creates, edits or comments on a Jira issue.</dd>
+      <dd>Only its own read-only <a href="jql.html">CRM fields</a> on work items linked to a record, so that JQL can find them. It never creates, transitions or comments on a work item, and it changes no other field.</dd>
       <dt>Can I see only my own records?</dt>
       <dd>You can <em>filter</em> to yours with My Leads, My Deals and the like, but the app has no per-record privacy. Everyone who can open it sees everything. See <a href="permissions.html">Permissions and access</a>.</dd>
       <dt>Can I add my own stages or have more than one pipeline?</dt>
-      <dd>No. There is one pipeline with six fixed stages. See <a href="pipeline.html">Leads, deals and the pipeline</a>.</dd>
+      <dd>A Jira administrator can rename, add and remove stages, up to 12 before Won and Lost. There is one pipeline per site. See <a href="settings.html#deal-stages">Settings</a>.</dd>
       <dt>Can I drag deals between columns?</dt>
-      <dd>No. Use the stage selector on the card or in the table row.</dd>
+      <dd>Yes. Drag a card to another column on the board. Won and Lost ask for a reason first.</dd>
+      <dt>Can I add my own fields?</dt>
+      <dd>Yes. A Jira administrator can add text, number, date and dropdown fields to contacts, companies, deals and leads. See <a href="custom-fields.html">Custom fields</a>.</dd>
+      <dt>Can I see the customer from a Jira work item?</dt>
+      <dd>Yes. Every work item has a <a href="jira.html#the-crm-panel">CRM panel</a> showing its linked records.</dd>
+      <dt>Can I search work items by deal or customer?</dt>
+      <dd>Yes, with JQL. See <a href="jql.html">Finding work items with JQL</a>.</dd>
+      <dt>Does it work with Jira Automation?</dt>
+      <dd>Yes, as actions: a rule can move deals, create a lead, add a note or create a task. A change in the CRM can't start a rule. See <a href="automation.html">Jira Automation</a>.</dd>
       <dt>Can I send email or log meetings from the app?</dt>
       <dd>No. The app does not connect to email or a calendar and does not store attachments. Write what happened as a note, and add a task for what comes next.</dd>
       <dt>Can I move my data in from a spreadsheet?</dt>
@@ -91,7 +103,7 @@
       <dt>Can I undo a delete or a merge?</dt>
       <dd>No. Both are permanent. The <a href="activities.html">audit trail</a> shows what was removed.</dd>
       <dt>How many records can it hold?</dt>
-      <dd>A few thousand per section is comfortable. See <a href="limits.html">Limits and behaviour</a>.</dd>
+      <dd>Sections are designed for up to 5,000 records each. See <a href="limits.html">Limits and behaviour</a>.</dd>
       <dt>Where is the data stored?</dt>
       <dd>In Atlassian's storage for the app, on your own Atlassian site. See the <a href="privacy.html">privacy policy</a>.</dd>
     </dl>
@@ -99,7 +111,7 @@
     <h2 id="support">Support<a class="h-anchor" href="#support" aria-label="Link to this section">#</a></h2>
     <p>Questions, bug reports or feature requests: <a href="mailto:info@vudia.site">info@vudia.site</a>. To help us answer quickly, tell us which section you were in, what you expected, what you saw, and attach a screenshot if you can. Security reports go to the address on the <a href="security.html">security page</a>.</p>
     <div class="pagenav"><a class="prev" href="troubleshooting.html"><small>Previous</small>Troubleshooting</a><a class="next" href="changelog.html"><small>Next</small>What&#x27;s new</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

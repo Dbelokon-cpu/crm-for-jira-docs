@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linking to Jira and sharing records · CRM for Jira documentation</title>
-<meta name="description" content="Point a record at the Jira work item that delivers it, and send a colleague straight to a record.">
+<title>Linking to Jira and sharing records · Dealtrail CRM documentation</title>
+<meta name="description" content="Connect records to the Jira work items that deliver them, see the customer on the work item, and send a colleague straight to a record.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html" aria-current="page">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -66,27 +70,45 @@
   <main id="content">
     <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
     <h1>Linking to Jira and sharing records</h1>
-    <p class="subtitle">Point a record at the Jira work item that delivers it, and send a colleague straight to a record.</p>
+    <p class="subtitle">Connect records to the Jira work items that deliver them, see the customer on the work item, and send a colleague straight to a record.</p>
     <h2 id="linking-a-record-to-a-work-item">Linking a record to a work item<a class="h-anchor" href="#linking-a-record-to-a-work-item" aria-label="Link to this section">#</a></h2>
     <p>Leads, contacts, companies and deals have a <strong>Jira work item</strong> field. Type a key such as <code>PROJ-123</code> and save.</p>
-    <p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. If it does, the record then shows the item's summary and status next to the key, so a deal can point at the ticket that delivers it. The key is looked up at the moment you save; a later change to the item's summary or status is not pulled in until you save the record again.</p>
+    <p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. The record then shows the item's summary and status next to the key, read live from Jira as the person viewing the card, so Jira's permissions apply.</p>
     <ul>
       <li>Keys are not case sensitive: <code>proj-123</code> is stored as <code>PROJ-123</code>.</li>
       <li>If the key does not exist, or you cannot see it, the save is refused with a message.</li>
-      <li>The app only <strong>reads</strong> the work item. It never changes anything in Jira.</li>
+      <li>A record links to one work item at a time. One work item can have several records.</li>
+      <li>When a work item moves to another project, or a project's key is renamed, its links follow it to the new key within a few minutes. The change is recorded on each record's timeline.</li>
     </ul>
+
+    <h2 id="the-crm-panel">The CRM panel on a work item<a class="h-anchor" href="#the-crm-panel" aria-label="Link to this section">#</a></h2>
+    <p>Every Jira work item has a <strong>CRM</strong> panel in its details sidebar. Expand it to see the deals, contacts, companies and leads linked to that work item, with the deal's stage and amount or the contact's company and email. Click a name to open its card in the CRM.</p>
+    <ul>
+      <li><strong>Link a CRM record</strong> links another one from there: pick the record type, type to search by name, and press <strong>Link</strong>. Linking a record here moves it from wherever it was linked before.</li>
+      <li><strong>Unlink</strong> removes a link.</li>
+    </ul>
+    <p>Links and unlinks are recorded on the record's timeline.</p>
+
+    <h2 id="searching-work-items-by-crm-data">Searching work items by CRM data<a class="h-anchor" href="#searching-work-items-by-crm-data" aria-label="Link to this section">#</a></h2>
+    <p>Linked work items carry four read-only fields that JQL, filters and boards can use. See <a href="jql.html">Finding work items with JQL</a>.</p>
+
+    <h2 id="my-crm-follow-ups-gadget">My CRM follow-ups gadget<a class="h-anchor" href="#my-crm-follow-ups-gadget" aria-label="Link to this section">#</a></h2>
+    <p>Add the <strong>My CRM follow-ups</strong> gadget to a Jira dashboard: <strong>Edit</strong> the dashboard, then <strong>Add gadget</strong>. It lists your open CRM tasks and the next steps of the deals you own that are overdue, due today or due in the next 7 days. Click one to open it in the CRM, or press <strong>Done</strong> to complete a task. Each person sees their own.</p>
 
     <h2 id="sharing-records">Sharing records<a class="h-anchor" href="#sharing-records" aria-label="Link to this section">#</a></h2>
     <p>Every record card has its own web address. When you open a card, the address in your browser changes to point at it, and changes back when you close it. Copy it from the address bar and paste it into a Jira comment, an email or a chat message; whoever opens it (and has access to the app) lands directly on the same record.</p>
     <p>The address carries the record's id in a parameter named for its section: <code>selectedDealId</code>, <code>selectedLeadId</code>, <code>selectedContactId</code>, <code>selectedCompanyId</code>, <code>selectedProductId</code> or <code>selectedTaskId</code>.</p>
     <div class="callout"><p>If you open a link to a record that has since been deleted, the app opens normally and there is no card to show.</p></div>
-    <div class="pagenav"><a class="prev" href="settings.html"><small>Previous</small>Settings</a><a class="next" href="limits.html"><small>Next</small>Limits and behaviour</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="pagenav"><a class="prev" href="custom-fields.html"><small>Previous</small>Custom fields</a><a class="next" href="jql.html"><small>Next</small>Finding work items with JQL</a></div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
     <p>On this page</p>
     <a href="#linking-a-record-to-a-work-item">Linking a record to a work item</a>
+    <a href="#the-crm-panel">The CRM panel on a work item</a>
+    <a href="#searching-work-items-by-crm-data">Searching work items by CRM data</a>
+    <a href="#my-crm-follow-ups-gadget">My CRM follow-ups gadget</a>
     <a href="#sharing-records">Sharing records</a>
   </nav>
 </div>

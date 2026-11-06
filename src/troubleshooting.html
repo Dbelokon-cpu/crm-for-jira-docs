@@ -28,7 +28,7 @@
 <ul>
   <li>A deal shows in the column of its <strong>stage</strong>. If one is missing, check the <em>Lost</em> and <em>Won</em> columns at the end.</li>
   <li>Filters apply to the board as well as the table.</li>
-  <li>You cannot drag cards. Use the stage selector.</li>
+  <li>Each column shows its first 25 cards. Use the table view or a filter to see the rest.</li>
 </ul>
 
 <h3>A deal's amount changed on its own</h3>
@@ -48,8 +48,14 @@
   <li>A Dashboard filtered to one assignee only counts that person.</li>
 </ul>
 
+<h3>The Dashboard does not show my latest change yet</h3>
+<p><strong>Cause:</strong> Dashboard and Reports are worked out from a summary refreshed every few minutes. <strong>Fix:</strong> the line under the title says when; press <strong>Refresh</strong> to update it now.</p>
+
 <h3>Win rate shows a dash</h3>
 <p><strong>Cause:</strong> no deals were won or lost in the period, so there is nothing to divide. Open deals are not counted.</p>
+
+<h3>A section opens slowly</h3>
+<p><strong>Cause:</strong> each section loads its records when opened. <strong>Fix:</strong> check <a href="settings.html#data-size">Settings → Data size</a>; sections are designed for up to 5,000 records.</p>
 
 <h3>The currency looks wrong</h3>
 <p><strong>Cause:</strong> changing the currency in Settings changes the symbol only; it does not convert. An amount entered as 1,000 euros is now shown as 1,000 dollars. <strong>Fix:</strong> change the currency back, or re-enter the amounts.</p>
@@ -63,10 +69,24 @@
 <p>The result lists each skipped row with the reason. The usual causes are a missing name, an invalid email or phone number, or an email that already exists. Fix those rows and import only them again.</p>
 
 <h3>Import created duplicates</h3>
-<p><strong>Cause:</strong> import does not look for existing records, so a second import adds a second copy. <strong>Fix:</strong> open <a href="reports.html#data-quality">Reports → Potential Duplicates</a> and merge.</p>
+<p><strong>Cause:</strong> import does not look for existing records, so a second import adds a second copy. <strong>Fix:</strong> find the extra copies with search, then <a href="contacts-companies.html#merging-duplicates">merge</a> contacts and companies, or delete the rest.</p>
 
-<h3>A company or contact did not link on import</h3>
-<p><strong>Cause:</strong> the name must match an existing company or contact exactly (capital letters do not matter). <strong>Fix:</strong> import companies first, and check spelling.</p>
+<h3>A row failed with "no company named …"</h3>
+<p><strong>Cause:</strong> imported deals and contacts link to an existing company or contact by exact name (capital letters do not matter). <strong>Fix:</strong> import companies first, and check spelling.</p>
+
+<h2>Jira</h2>
+
+<h3>I cannot find a record in a picker</h3>
+<p><strong>Cause:</strong> pickers find records whose name, or a person's surname, starts with what you type. <strong>Fix:</strong> type the start of the name.</p>
+
+<h3>A JQL search finds nothing</h3>
+<ul>
+  <li>Only work items linked to a CRM record carry the fields. Check the link on the record's card.</li>
+  <li>Put the field name in quotes, as in <code>"Dealtrail Deals.Stage" = "Negotiation"</code>. See <a href="jql.html#examples">the examples</a>.</li>
+</ul>
+
+<h3>An Automation rule stopped at a Dealtrail CRM step</h3>
+<p>The reason is in the rule's audit log. A work item with no deals is not a failure: <strong>Move deals</strong> skips it. See <a href="automation.html">Jira Automation</a>.</p>
 
 <h2>Links</h2>
 

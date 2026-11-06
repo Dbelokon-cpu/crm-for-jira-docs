@@ -1,0 +1,24 @@
+<!--meta {"title": "Jira Automation", "desc": "Add Dealtrail CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM."} -->
+<h2>The four actions</h2>
+<p>Search for "Dealtrail CRM" when adding an action to a rule.</p>
+<div class="tablewrap"><table>
+  <tr><th>Action</th><th>What it does</th></tr>
+  <tr><td>Move deals in Dealtrail CRM</td><td>Moves the open deals linked to a work item to a stage. Won and lost deals stay as they are, and a work item with no deals is skipped without an error.</td></tr>
+  <tr><td>Create lead in Dealtrail CRM</td><td>Creates a lead, linked to the work item if you keep <code>{{issue.key}}</code>.</td></tr>
+  <tr><td>Add note in Dealtrail CRM</td><td>Adds a note to every linked record of the type you choose.</td></tr>
+  <tr><td>Create task in Dealtrail CRM</td><td>Creates a task on the work item's linked record, taking a deal first, then a contact, company or lead.</td></tr>
+</table></div>
+<p>Text fields accept smart values such as <code>{{issue.summary}}</code>.</p>
+<div class="example">
+  <strong>Example</strong>
+  <p>When a work item moves to Done, move its deals to Won.</p>
+</div>
+
+<h2>The first time you add a step</h2>
+<p>Jira asks you to connect Automation to the app. Rule runs then act as the person on that connection, and the record's history shows their name.</p>
+
+<h2>When a step fails</h2>
+<p>The rule stops, and the reason is in the rule's audit log.</p>
+
+<h2>What rules cannot do</h2>
+<p>A rule can't start from a change in the CRM: Jira doesn't let apps add their own triggers.</p>

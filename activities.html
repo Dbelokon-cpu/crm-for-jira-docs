@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Activities · CRM for Jira documentation</title>
+<title>Activities · Dealtrail CRM documentation</title>
 <meta name="description" content="The audit trail: who created, changed, reassigned, converted, merged or deleted what, and when.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html" aria-current="page">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -73,17 +77,19 @@
 
     <h2 id="where-to-see-it">Where to see it<a class="h-anchor" href="#where-to-see-it" aria-label="Link to this section">#</a></h2>
     <ul>
-      <li>The <strong>Activities</strong> section: everything, newest first. Filter by record type (Lead, Contact, Company, Deal, Product, Task) and by event type.</li>
+      <li>The <strong>Activities</strong> section: everything, newest first. Search it, or filter by record type (Lead, Contact, Company, Deal, Product, Task) and by event type.</li>
       <li>A record's <a href="records.html#timeline-tab">Timeline tab</a>: only that record's history.</li>
       <li><strong>Last activity</strong> on a card and <strong>Recent Activity</strong> on the Dashboard.</li>
     </ul>
     <p>Activities can be exported to CSV.</p>
 
+    <p>A step in a <a href="automation.html">Jira Automation</a> rule is recorded under the name of the person on the rule's connection.</p>
+
     <h2 id="how-much-is-kept">How much is kept<a class="h-anchor" href="#how-much-is-kept" aria-label="Link to this section">#</a></h2>
     <p>The trail keeps the <strong>latest 500 entries</strong>. Older ones are removed automatically as new ones arrive, so it is a recent history, not a permanent archive. The Activities section shows the newest 100. <a href="settings.html">Settings</a> shows how many entries are kept right now.</p>
     <p>If you need a long-term record of something, put it in a note on the record.</p>
     <div class="pagenav"><a class="prev" href="reports.html"><small>Previous</small>Reports</a><a class="next" href="settings.html"><small>Next</small>Settings</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

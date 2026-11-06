@@ -1,6 +1,6 @@
-# CRM for Jira: Documentation
+# Dealtrail CRM: Documentation
 
-Public documentation, privacy policy and security policy for the CRM for Jira app by Vudia. The app's source code lives in a separate, private repository; this one holds only the user-facing docs.
+Public documentation, privacy policy and security policy for the Dealtrail CRM app by Vudia. The app's source code lives in a separate, private repository; this one holds only the user-facing docs.
 
 ## How the site is made
 
@@ -24,6 +24,6 @@ The build fails on a link to a page that does not exist or to a section (`page.h
 
 ## Structure
 
-Start (overview, quick start) · Concepts (pipeline, records) · Guides (leads, deals, contacts and companies, products, tasks, search and filters, bulk and CSV, dashboard, reports, activities, settings, Jira links) · Reference (limits, permissions, glossary) · Help (troubleshooting, FAQ, what's new) · Policies (privacy, security). One worked example, the *Northwind Traders* sale, runs through the pages so numbers can be followed from page to page.
+Start (overview, quick start) · Concepts (pipeline, records) · Guides (leads, deals, contacts and companies, products, tasks, search and filters, bulk and CSV, dashboard, reports, activities, settings, custom fields, Jira links, JQL, Automation) · Reference (limits, permissions, glossary) · Help (troubleshooting, FAQ, what's new) · Policies (privacy, security). One worked example, the *Northwind Traders* sale, runs through the pages so numbers can be followed from page to page.
 
 When the app changes behaviour, update the matching page, the troubleshooting entry if the symptom changes, and add a line to `src/changelog.html`.

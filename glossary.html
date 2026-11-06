@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glossary · CRM for Jira documentation</title>
+<title>Glossary · Dealtrail CRM documentation</title>
 <meta name="description" content="The terms used across these docs and in the app, in one place.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -76,9 +80,13 @@
       <dt id="company">Company</dt><dd>An organisation you sell to. Can have a parent company.</dd>
       <dt id="contact">Contact</dt><dd>A person at a company, or on their own.</dd>
       <dt id="convert">Convert</dt><dd>Turning a qualified lead into a deal. Creates a contact and company if none match.</dd>
+      <dt id="crm-panel">CRM panel</dt><dd>The panel in a Jira work item's sidebar that shows its linked records.</dd>
+      <dt id="custom-field">Custom field</dt><dd>A field of your own on contacts, companies, deals or leads, added by a Jira administrator.</dd>
       <dt id="deal">Deal</dt><dd>A sale you are working on, moving through the pipeline.</dd>
       <dt id="deal-type">Deal type</dt><dd>New Business, Existing Business or Renewal.</dd>
-      <dt id="kanban">Kanban</dt><dd>The board view, with a column per stage (deals) or status (leads).</dd>
+      <dt id="dealtrail-fields">Dealtrail fields</dt><dd>Four read-only fields on linked work items, used to find them with JQL.</dd>
+      <dt id="gadget">Gadget</dt><dd>My CRM follow-ups, a Jira dashboard item listing your tasks and next steps.</dd>
+      <dt id="kanban">Kanban</dt><dd>The board view, with a column per stage (deals) or status (leads). Drag a card to move it.</dd>
       <dt id="lead">Lead</dt><dd>A prospect who has shown interest but is not yet a customer.</dd>
       <dt id="line-item">Line item</dt><dd>A product attached to a lead or deal. Keeps the price it had when added.</dd>
       <dt id="next-step">Next step</dt><dd>What happens next on a deal, with an optional due date.</dd>
@@ -89,7 +97,7 @@
       <dt id="saved-view">Saved view</dt><dd>A named set of filters on one list, kept for you alone.</dd>
       <dt id="sales-cycle">Sales cycle</dt><dd>The average days from creating a deal to winning it.</dd>
       <dt id="sku">SKU</dt><dd>Your own code for a product.</dd>
-      <dt id="stage">Stage</dt><dd>Where a deal is: New, Discovery, Negotiation, Proposal, Won or Lost.</dd>
+      <dt id="stage">Stage</dt><dd>Where a deal is in your pipeline. Starts as New, Discovery, Negotiation, Proposal, Won and Lost; a Jira administrator can change those before Won and Lost.</dd>
       <dt id="stale">Stale</dt><dd>A deal or lead that has not moved for longer than the stale threshold.</dd>
       <dt id="timeline">Timeline</dt><dd>A record's own history, on its card.</dd>
       <dt id="weighted-pipeline">Weighted pipeline</dt><dd>Each open deal's amount multiplied by its win probability, added up.</dd>
@@ -97,7 +105,7 @@
       <dt id="work-item">Work item</dt><dd>Jira's name for an issue. A record can store one work item key.</dd>
     </dl>
     <div class="pagenav"><a class="prev" href="permissions.html"><small>Previous</small>Permissions and access</a><a class="next" href="troubleshooting.html"><small>Next</small>Troubleshooting</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

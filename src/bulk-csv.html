@@ -7,7 +7,7 @@
   <tr><td>Deals</td><td>Assign owner, change stage, delete</td></tr>
   <tr><td>Contacts, Companies</td><td>Assign owner, delete</td></tr>
   <tr><td>Products</td><td>Delete</td></tr>
-  <tr><td>Tasks</td><td>Assign, change priority, complete, delete</td></tr>
+  <tr><td>Tasks</td><td>Assign, change priority, delete</td></tr>
 </table></div>
 <p>Deleting asks you to confirm and states how many records will go. Bulk deletion cannot be undone.</p>
 
@@ -27,9 +27,10 @@
   </table></div>
   <p>The columns it recognises for contacts are <code>Name</code>, <code>Title</code>, <code>Company</code>, <code>Email</code>, <code>Secondary Email</code>, <code>Phone</code>, <code>LinkedIn</code>, <code>Tags</code> and <code>Jira Work Item</code>. A company is matched by name to one that already exists, so import companies first.</p>
 </div>
-<div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records. Check the result, and use <a href="reports.html#data-quality">Potential Duplicates</a> if you have to clean up.</p></div>
+<div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records, apart from refusing an email address that is already in use. Check the result, and <a href="contacts-companies.html#merging-duplicates">merge</a> any contacts or companies you have to clean up.</p></div>
 
 <h2>Export to CSV</h2>
-<p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those.</p>
+<p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those. <a href="custom-fields.html">Custom fields</a> appear as extra columns.</p>
 <p>Several report tables have their own <strong>Export to CSV</strong> button, and <a href="settings.html">Settings</a> can export everything.</p>
+<p>A cell that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> is exported with a leading <code>'</code>, so a spreadsheet does not run it as a formula. Import removes it again.</p>
 <p>The app shows CSV as text, not as a download, because the page it runs in cannot start a file download.</p>

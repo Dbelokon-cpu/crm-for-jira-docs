@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reports · CRM for Jira documentation</title>
-<meta name="description" content="Breakdowns of pipeline, leads, revenue, outcomes and data quality, a period comparison, and a snapshot you can paste into a Jira comment.">
+<title>Reports · Dealtrail CRM documentation</title>
+<meta name="description" content="Breakdowns of pipeline, leads, revenue and outcomes, a period comparison, and a snapshot you can paste into a Jira comment.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html" aria-current="page">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -66,7 +70,7 @@
   <main id="content">
     <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
     <h1>Reports</h1>
-    <p class="subtitle">Breakdowns of pipeline, leads, revenue, outcomes and data quality, a period comparison, and a snapshot you can paste into a Jira comment.</p>
+    <p class="subtitle">Breakdowns of pipeline, leads, revenue and outcomes, a period comparison, and a snapshot you can paste into a Jira comment.</p>
     <h2 id="reports-and-the-period">Reports and the period<a class="h-anchor" href="#reports-and-the-period" aria-label="Link to this section">#</a></h2>
     <p>Open <strong>Reports</strong>. The page is a set of cards in sections. Pick a period at the top (<em>This month</em>, <em>Last month</em>, <em>This quarter</em>, <em>This year</em> or <em>Last 30 days</em>) to see the figures that depend on time.</p>
 
@@ -81,7 +85,6 @@
       <li><strong>Deals by Stage</strong> and <strong>Pipeline Value by Stage</strong></li>
       <li><strong>Forecast by Close Month</strong>: expected value by the deals' close dates</li>
       <li><strong>Open Pipeline by Owner</strong></li>
-      <li><strong>Average Days per Stage</strong>: where deals wait</li>
       <li><strong>Deals by Type</strong></li>
     </ul>
 
@@ -94,7 +97,7 @@
 
     <h2 id="revenue">Revenue<a class="h-anchor" href="#revenue" aria-label="Link to this section">#</a></h2>
     <ul>
-      <li><strong>Revenue by Lead Source</strong>, <strong>by Product</strong> and <strong>by Category</strong>: what won deals brought in</li>
+      <li><strong>Revenue by Lead Source</strong>: what won deals brought in</li>
       <li><strong>Sales Performance by Assignee</strong>, with CSV export</li>
     </ul>
 
@@ -104,16 +107,13 @@
     <h2 id="accounts-products-and-operations">Accounts, products and operations<a class="h-anchor" href="#accounts-products-and-operations" aria-label="Link to this section">#</a></h2>
     <ul>
       <li><strong>Companies by Industry</strong> and <strong>by Size</strong></li>
-      <li><strong>Products by Category</strong> and <strong>Deal Contacts by Product</strong> (who bought what)</li>
+      <li><strong>Products by Category</strong></li>
       <li><strong>Tasks by Type</strong>, <strong>by Priority</strong> and <strong>Task Load by Assignee</strong></li>
     </ul>
 
-    <h2 id="data-quality">Data quality<a class="h-anchor" href="#data-quality" aria-label="Link to this section">#</a></h2>
-    <p><strong>Potential Duplicates</strong> lists records that probably describe the same thing: companies with the same name or website, contacts with the same email or phone, products with the same SKU. Open each and <a href="contacts-companies.html#merging-duplicates">merge</a> where it is a real duplicate.</p>
-
-    <div class="callout"><p>Reports are calculated from the records in the app at the moment you open them, so they are always current. They can be a little slow on a site with a lot of data: see <a href="limits.html">Limits and behaviour</a>.</p></div>
+    <div class="callout"><p>Reports use the same summary as the Dashboard, so a change you just saved can take a few minutes to show. See <a href="dashboard.html#how-fresh-the-figures-are">how fresh the figures are</a>.</p></div>
     <div class="pagenav"><a class="prev" href="dashboard.html"><small>Previous</small>Dashboard</a><a class="next" href="activities.html"><small>Next</small>Activities</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
@@ -126,7 +126,6 @@
     <a href="#revenue">Revenue</a>
     <a href="#deal-outcomes">Deal outcomes</a>
     <a href="#accounts-products-and-operations">Accounts, products and operations</a>
-    <a href="#data-quality">Data quality</a>
   </nav>
 </div>
 <script src="assets/site.js"></script>

@@ -1,12 +1,27 @@
-<!--meta {"title": "Linking to Jira and sharing records", "desc": "Point a record at the Jira work item that delivers it, and send a colleague straight to a record."} -->
+<!--meta {"title": "Linking to Jira and sharing records", "desc": "Connect records to the Jira work items that deliver them, see the customer on the work item, and send a colleague straight to a record."} -->
 <h2>Linking a record to a work item</h2>
 <p>Leads, contacts, companies and deals have a <strong>Jira work item</strong> field. Type a key such as <code>PROJ-123</code> and save.</p>
-<p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. If it does, the record then shows the item's summary and status next to the key, so a deal can point at the ticket that delivers it. The key is looked up at the moment you save; a later change to the item's summary or status is not pulled in until you save the record again.</p>
+<p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. The record then shows the item's summary and status next to the key, read live from Jira as the person viewing the card, so Jira's permissions apply.</p>
 <ul>
   <li>Keys are not case sensitive: <code>proj-123</code> is stored as <code>PROJ-123</code>.</li>
   <li>If the key does not exist, or you cannot see it, the save is refused with a message.</li>
-  <li>The app only <strong>reads</strong> the work item. It never changes anything in Jira.</li>
+  <li>A record links to one work item at a time. One work item can have several records.</li>
+  <li>When a work item moves to another project, or a project's key is renamed, its links follow it to the new key within a few minutes. The change is recorded on each record's timeline.</li>
 </ul>
+
+<h2 id="the-crm-panel">The CRM panel on a work item</h2>
+<p>Every Jira work item has a <strong>CRM</strong> panel in its details sidebar. Expand it to see the deals, contacts, companies and leads linked to that work item, with the deal's stage and amount or the contact's company and email. Click a name to open its card in the CRM.</p>
+<ul>
+  <li><strong>Link a CRM record</strong> links another one from there: pick the record type, type to search by name, and press <strong>Link</strong>. Linking a record here moves it from wherever it was linked before.</li>
+  <li><strong>Unlink</strong> removes a link.</li>
+</ul>
+<p>Links and unlinks are recorded on the record's timeline.</p>
+
+<h2>Searching work items by CRM data</h2>
+<p>Linked work items carry four read-only fields that JQL, filters and boards can use. See <a href="jql.html">Finding work items with JQL</a>.</p>
+
+<h2 id="my-crm-follow-ups-gadget">My CRM follow-ups gadget</h2>
+<p>Add the <strong>My CRM follow-ups</strong> gadget to a Jira dashboard: <strong>Edit</strong> the dashboard, then <strong>Add gadget</strong>. It lists your open CRM tasks and the next steps of the deals you own that are overdue, due today or due in the next 7 days. Click one to open it in the CRM, or press <strong>Done</strong> to complete a task. Each person sees their own.</p>
 
 <h2 id="sharing-records">Sharing records</h2>
 <p>Every record card has its own web address. When you open a card, the address in your browser changes to point at it, and changes back when you close it. Copy it from the address bar and paste it into a Jira comment, an email or a chat message; whoever opens it (and has access to the app) lands directly on the same record.</p>

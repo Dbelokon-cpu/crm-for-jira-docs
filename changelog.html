@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What&#x27;s new · CRM for Jira documentation</title>
-<meta name="description" content="User-visible changes to CRM for Jira, newest first.">
+<title>What&#x27;s new · Dealtrail CRM documentation</title>
+<meta name="description" content="User-visible changes to Dealtrail CRM, newest first.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -66,7 +70,28 @@
   <main id="content">
     <div class="crumb"><a href="index.html">Docs</a> / Help</div>
     <h1>What&#x27;s new</h1>
-    <p class="subtitle">User-visible changes to CRM for Jira, newest first.</p>
+    <p class="subtitle">User-visible changes to Dealtrail CRM, newest first.</p>
+    <h2 id="november-2026">November 2026<a class="h-anchor" href="#november-2026" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>New name.</strong> CRM for Jira is now Dealtrail CRM.</li>
+      <li><strong>Jira Automation actions.</strong> Move deals, create a lead, add a note or create a task from a rule.</li>
+      <li><strong>CRM fields in JQL.</strong> Find work items by deal stage, owner, lead status or company, and use them in filters and boards.</li>
+      <li><strong>Drag and drop.</strong> Drag cards between columns on the Deals and Leads boards.</li>
+      <li><strong>New look.</strong> Grouped side menu, which you can collapse, and redesigned tiles and boards.</li>
+      <li><strong>CRM panel on work items.</strong> See and change a work item's linked records from Jira.</li>
+      <li><strong>Your own deal stages.</strong> Rename, reorder, add and remove the stages before Won and Lost.</li>
+      <li><strong>Custom fields</strong> on contacts, companies, deals and leads.</li>
+      <li><strong>My CRM follow-ups</strong> gadget for Jira dashboards.</li>
+      <li><strong>Links follow work items</strong> when one moves to another project or a project key changes.</li>
+      <li><strong>Faster Dashboard and Reports,</strong> worked out from a summary that shows when it was made.</li>
+      <li><strong>Closed Atlassian accounts</strong> are now removed from records automatically.</li>
+    </ul>
+    <h2 id="october-2026">October 2026<a class="h-anchor" href="#october-2026" aria-label="Link to this section">#</a></h2>
+    <ul>
+      <li><strong>Faster on larger sites.</strong> Each section loads only its own records, and long lists are shown 50 rows at a time. Sections are designed for up to 5,000 records.</li>
+      <li><strong>Security fixes.</strong> A linked work item's summary and status are read live as the viewer, and CSV exports are protected against spreadsheet formulas.</li>
+      <li><strong>Removed to make that possible:</strong> global search, Potential Duplicates, and the Revenue by Product, Revenue by Category, Deal Contacts by Product and Average Days per Stage reports.</li>
+    </ul>
     <h2 id="september-2026">September 2026<a class="h-anchor" href="#september-2026" aria-label="Link to this section">#</a></h2>
     <ul>
       <li><strong>Stat tiles are filters.</strong> Click a tile on the Dashboard or above a list and the list narrows to exactly those rows.</li>
@@ -93,11 +118,13 @@
       <li>First version: contacts, companies and deals with a Kanban pipeline.</li>
     </ul>
     <div class="pagenav"><a class="prev" href="faq.html"><small>Previous</small>FAQ and support</a><a class="next" href="privacy.html"><small>Next</small>Privacy policy</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
     <p>On this page</p>
+    <a href="#november-2026">November 2026</a>
+    <a href="#october-2026">October 2026</a>
     <a href="#september-2026">September 2026</a>
     <a href="#august-2026">August 2026</a>
   </nav>

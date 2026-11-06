@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
-SITE = "CRM for Jira"
+SITE = "Dealtrail CRM"
 NAV = [
     ("Start", [("index", "Overview"), ("quick-start", "Quick start")]),
     ("Concepts", [("pipeline", "Leads, deals and the pipeline"), ("records", "Records, notes and timeline")]),
@@ -26,7 +26,8 @@ NAV = [
         ("leads", "Leads"), ("deals", "Deals"), ("contacts-companies", "Contacts and companies"),
         ("products", "Products"), ("tasks", "Tasks"), ("finding", "Search, filters and saved views"),
         ("bulk-csv", "Bulk actions, import and export"), ("dashboard", "Dashboard"), ("reports", "Reports"),
-        ("activities", "Activities"), ("settings", "Settings"), ("jira", "Linking to Jira and sharing records"),
+        ("activities", "Activities"), ("settings", "Settings"), ("custom-fields", "Custom fields"),
+        ("jira", "Linking to Jira and sharing records"), ("jql", "Finding work items with JQL"), ("automation", "Jira Automation"),
     ]),
     ("Reference", [("limits", "Limits and behaviour"), ("permissions", "Permissions and access"), ("glossary", "Glossary")]),
     ("Help", [("troubleshooting", "Troubleshooting"), ("faq", "FAQ and support"), ("changelog", "What's new")]),
@@ -48,6 +49,7 @@ TEMPLATE = """<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -56,7 +58,7 @@ TEMPLATE = """<!doctype html>
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark">{logo}</div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -80,7 +82,7 @@ TEMPLATE = """<!doctype html>
     <p class="subtitle">{desc}</p>
 {body}
 {pagenav}
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

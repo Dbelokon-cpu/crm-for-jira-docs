@@ -1,10 +1,10 @@
-<!--meta {"title": "Leads, deals and the pipeline", "desc": "How a prospect becomes a sale: the statuses, the six deal stages, win probability and the weighted forecast."} -->
+<!--meta {"title": "Leads, deals and the pipeline", "desc": "How a prospect becomes a sale: the statuses, the deal stages, win probability and the weighted forecast."} -->
 <h2>From lead to deal</h2>
 <p>A <strong>lead</strong> is someone who has shown interest but is not yet a customer. A <strong>deal</strong> is a sale you are actively working. The two are separate records on purpose: most leads never become deals, and you do not want them in your forecast.</p>
 <p>A lead moves through five statuses: <em>New</em>, <em>Contacted</em>, <em>Qualified</em>, <em>Converted</em> or <em>Lost</em>. When a lead is qualified, you <a href="leads.html#converting-a-lead">convert</a> it. That creates the deal and links the two, so you can always see where a deal came from.</p>
 
-<h2>The six stages</h2>
-<p>There is one pipeline, with six stages. Each has a default chance of winning:</p>
+<h2>The stages</h2>
+<p>There is one pipeline. A new workspace starts with these stages, each with a default chance of winning:</p>
 <div class="tablewrap"><table>
   <tr><th>Stage</th><th class="num">Win probability</th><th>Meaning</th></tr>
   <tr><td>New</td><td class="num">10%</td><td>Just created, not yet worked</td></tr>
@@ -14,7 +14,7 @@
   <tr><td>Won</td><td class="num">100%</td><td>Closed, the customer signed</td></tr>
   <tr><td>Lost</td><td class="num">0%</td><td>Closed, no sale</td></tr>
 </table></div>
-<p>One pipeline is enough for most small teams. The stages are fixed: you cannot add or rename them.</p>
+<p>A Jira administrator can rename and reorder the stages before Won and Lost, change their win probabilities, add stages (up to 12) and remove them, in <a href="settings.html#deal-stages">Settings</a>. Won and Lost are always there and always last.</p>
 
 <h2 id="weighted-pipeline">Weighted pipeline</h2>
 <p>A raw pipeline total treats a brand new deal and a nearly signed one as equal. <strong>Weighted pipeline</strong> multiplies each open deal's amount by its probability, so it is a more realistic forecast.</p>

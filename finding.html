@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search, filters and saved views · CRM for Jira documentation</title>
+<title>Search, filters and saved views · Dealtrail CRM documentation</title>
 <meta name="description" content="Find a record in seconds, narrow a list to what matters today, and keep your favourite filters one click away.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -68,9 +72,9 @@
     <h1>Search, filters and saved views</h1>
     <p class="subtitle">Find a record in seconds, narrow a list to what matters today, and keep your favourite filters one click away.</p>
     <h2 id="search">Search<a class="h-anchor" href="#search" aria-label="Link to this section">#</a></h2>
-    <p>Each list has its own search box above it, which searches that section by name and other key fields.</p>
-    <h3 id="global-search">Global search<a class="h-anchor" href="#global-search" aria-label="Link to this section">#</a></h3>
-    <p>The box at the top of the app searches <strong>every section at once</strong>, including the text of notes. Type at least two characters. Results are grouped by record type with the number of matches in each; click one to open its card.</p>
+    <p>Each section has its own search box above the list, which searches that section by name and other key fields. There is no search across all sections at once, and the text of notes is not searched.</p>
+    <p>Long lists show 50 rows at a time, with page numbers under the table. Search and filters always cover the whole list.</p>
+    <p>Where a form links one record to another, such as a deal's contact, start typing in the picker: it finds records whose name, or a person's surname, begins with what you typed.</p>
 
     <h2 id="filters">Filters<a class="h-anchor" href="#filters" aria-label="Link to this section">#</a></h2>
     <p>Quick filters sit above each list. Which ones you see depends on the section:</p>
@@ -79,7 +83,7 @@
       <tr><td>Leads</td><td>My Leads, Unassigned, status, rating, source, stale</td></tr>
       <tr><td>Deals</td><td>My Deals, Stale, Overdue, No Next Step, Unassigned, stage, type</td></tr>
       <tr><td>Contacts</td><td>My Contacts, Do Not Contact, Unlinked (no company), company</td></tr>
-      <tr><td>Companies</td><td>My Companies, industry, With Open Deals</td></tr>
+      <tr><td>Companies</td><td>My Companies, Unlinked, industry, With Open Deals</td></tr>
       <tr><td>Products</td><td>Unused, category, unit</td></tr>
       <tr><td>Tasks</td><td>My Tasks, Overdue, Due Today, priority, type</td></tr>
     </table></div>
@@ -98,7 +102,7 @@
       <p>On <strong>Deals</strong>, turn on <em>My Deals</em> and <em>Stale</em>, then save the view as <em>My stale deals</em>. Every Monday, one click shows what to chase.</p>
     </div>
     <div class="pagenav"><a class="prev" href="tasks.html"><small>Previous</small>Tasks</a><a class="next" href="bulk-csv.html"><small>Next</small>Bulk actions, import and export</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

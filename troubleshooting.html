@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Troubleshooting · CRM for Jira documentation</title>
+<title>Troubleshooting · Dealtrail CRM documentation</title>
 <meta name="description" content="Symptom, likely cause and what to do, for the problems people meet most often.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -96,7 +100,7 @@
     <ul>
       <li>A deal shows in the column of its <strong>stage</strong>. If one is missing, check the <em>Lost</em> and <em>Won</em> columns at the end.</li>
       <li>Filters apply to the board as well as the table.</li>
-      <li>You cannot drag cards. Use the stage selector.</li>
+      <li>Each column shows its first 25 cards. Use the table view or a filter to see the rest.</li>
     </ul>
 
     <h3 id="a-deal-s-amount-changed-on-its-own">A deal's amount changed on its own<a class="h-anchor" href="#a-deal-s-amount-changed-on-its-own" aria-label="Link to this section">#</a></h3>
@@ -116,8 +120,14 @@
       <li>A Dashboard filtered to one assignee only counts that person.</li>
     </ul>
 
+    <h3 id="the-dashboard-does-not-show-my-latest-change-yet">The Dashboard does not show my latest change yet<a class="h-anchor" href="#the-dashboard-does-not-show-my-latest-change-yet" aria-label="Link to this section">#</a></h3>
+    <p><strong>Cause:</strong> Dashboard and Reports are worked out from a summary refreshed every few minutes. <strong>Fix:</strong> the line under the title says when; press <strong>Refresh</strong> to update it now.</p>
+
     <h3 id="win-rate-shows-a-dash">Win rate shows a dash<a class="h-anchor" href="#win-rate-shows-a-dash" aria-label="Link to this section">#</a></h3>
     <p><strong>Cause:</strong> no deals were won or lost in the period, so there is nothing to divide. Open deals are not counted.</p>
+
+    <h3 id="a-section-opens-slowly">A section opens slowly<a class="h-anchor" href="#a-section-opens-slowly" aria-label="Link to this section">#</a></h3>
+    <p><strong>Cause:</strong> each section loads its records when opened. <strong>Fix:</strong> check <a href="settings.html#data-size">Settings → Data size</a>; sections are designed for up to 5,000 records.</p>
 
     <h3 id="the-currency-looks-wrong">The currency looks wrong<a class="h-anchor" href="#the-currency-looks-wrong" aria-label="Link to this section">#</a></h3>
     <p><strong>Cause:</strong> changing the currency in Settings changes the symbol only; it does not convert. An amount entered as 1,000 euros is now shown as 1,000 dollars. <strong>Fix:</strong> change the currency back, or re-enter the amounts.</p>
@@ -131,17 +141,31 @@
     <p>The result lists each skipped row with the reason. The usual causes are a missing name, an invalid email or phone number, or an email that already exists. Fix those rows and import only them again.</p>
 
     <h3 id="import-created-duplicates">Import created duplicates<a class="h-anchor" href="#import-created-duplicates" aria-label="Link to this section">#</a></h3>
-    <p><strong>Cause:</strong> import does not look for existing records, so a second import adds a second copy. <strong>Fix:</strong> open <a href="reports.html#data-quality">Reports → Potential Duplicates</a> and merge.</p>
+    <p><strong>Cause:</strong> import does not look for existing records, so a second import adds a second copy. <strong>Fix:</strong> find the extra copies with search, then <a href="contacts-companies.html#merging-duplicates">merge</a> contacts and companies, or delete the rest.</p>
 
-    <h3 id="a-company-or-contact-did-not-link-on-import">A company or contact did not link on import<a class="h-anchor" href="#a-company-or-contact-did-not-link-on-import" aria-label="Link to this section">#</a></h3>
-    <p><strong>Cause:</strong> the name must match an existing company or contact exactly (capital letters do not matter). <strong>Fix:</strong> import companies first, and check spelling.</p>
+    <h3 id="a-row-failed-with-no-company-named">A row failed with "no company named …"<a class="h-anchor" href="#a-row-failed-with-no-company-named" aria-label="Link to this section">#</a></h3>
+    <p><strong>Cause:</strong> imported deals and contacts link to an existing company or contact by exact name (capital letters do not matter). <strong>Fix:</strong> import companies first, and check spelling.</p>
+
+    <h2 id="jira">Jira<a class="h-anchor" href="#jira" aria-label="Link to this section">#</a></h2>
+
+    <h3 id="i-cannot-find-a-record-in-a-picker">I cannot find a record in a picker<a class="h-anchor" href="#i-cannot-find-a-record-in-a-picker" aria-label="Link to this section">#</a></h3>
+    <p><strong>Cause:</strong> pickers find records whose name, or a person's surname, starts with what you type. <strong>Fix:</strong> type the start of the name.</p>
+
+    <h3 id="a-jql-search-finds-nothing">A JQL search finds nothing<a class="h-anchor" href="#a-jql-search-finds-nothing" aria-label="Link to this section">#</a></h3>
+    <ul>
+      <li>Only work items linked to a CRM record carry the fields. Check the link on the record's card.</li>
+      <li>Put the field name in quotes, as in <code>"Dealtrail Deals.Stage" = "Negotiation"</code>. See <a href="jql.html#examples">the examples</a>.</li>
+    </ul>
+
+    <h3 id="an-automation-rule-stopped-at-a-dealtrail-crm-step">An Automation rule stopped at a Dealtrail CRM step<a class="h-anchor" href="#an-automation-rule-stopped-at-a-dealtrail-crm-step" aria-label="Link to this section">#</a></h3>
+    <p>The reason is in the rule's audit log. A work item with no deals is not a failure: <strong>Move deals</strong> skips it. See <a href="automation.html">Jira Automation</a>.</p>
 
     <h2 id="links">Links<a class="h-anchor" href="#links" aria-label="Link to this section">#</a></h2>
 
     <h3 id="a-link-to-a-record-opens-the-app-but-not-the-record">A link to a record opens the app but not the record<a class="h-anchor" href="#a-link-to-a-record-opens-the-app-but-not-the-record" aria-label="Link to this section">#</a></h3>
     <p><strong>Cause:</strong> the record was deleted, or the link was cut when copied. <strong>Fix:</strong> copy the address again from the open card, in full.</p>
     <div class="pagenav"><a class="prev" href="glossary.html"><small>Previous</small>Glossary</a><a class="next" href="faq.html"><small>Next</small>FAQ and support</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
@@ -150,6 +174,7 @@
     <a href="#records-and-lists">Records and lists</a>
     <a href="#numbers">Numbers</a>
     <a href="#import-and-export">Import and export</a>
+    <a href="#jira">Jira</a>
     <a href="#links">Links</a>
   </nav>
 </div>

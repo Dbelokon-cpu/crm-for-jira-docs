@@ -1,0 +1,22 @@
+<!--meta {"title": "Finding work items with JQL", "desc": "Search Jira work items by deal stage, owner, lead status or company, and use the results in filters and boards."} -->
+<h2>The four fields</h2>
+<p>Every work item linked to a CRM record carries four read-only fields. They follow the record as it changes, and you can use them in JQL, filters and boards, and add them as list columns.</p>
+<div class="tablewrap"><table>
+  <tr><th>Field</th><th>You can search by</th></tr>
+  <tr><td>Dealtrail Deals</td><td>Name, Stage, Amount, CloseDate, Company, Owner</td></tr>
+  <tr><td>Dealtrail Leads</td><td>Name, Status, Rating, Source, Company, Assignee</td></tr>
+  <tr><td>Dealtrail Contacts</td><td>Name, Title, Company, Owner</td></tr>
+  <tr><td>Dealtrail Companies</td><td>Name, Industry, Country, Owner</td></tr>
+</table></div>
+
+<h2>Examples</h2>
+<pre><code>"Dealtrail Deals.Stage" = "Negotiation"
+"Dealtrail Deals.Owner" = currentUser()
+"Dealtrail Leads.Status" = "Qualified" AND status != Done
+"Dealtrail Deals" is not EMPTY</code></pre>
+
+<h2>Showing the fields on a work item</h2>
+<p>Search works straight away. A Jira administrator can also add the fields to a work item screen to show them there.</p>
+
+<h2>Who can read them</h2>
+<p>Anyone who can see the work item can read these fields, so they hold no email addresses or phone numbers. The values are updated when the record changes, and cleared when it is unlinked or deleted. See the <a href="privacy.html#writes">privacy policy</a>.</p>

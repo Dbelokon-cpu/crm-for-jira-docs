@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard · CRM for Jira documentation</title>
+<title>Dashboard · Dealtrail CRM documentation</title>
 <meta name="description" content="The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -71,9 +75,9 @@
     <p>The Dashboard answers "what needs me today?" before "how are we doing?". Its sections:</p>
     <div class="tablewrap"><table>
       <tr><th>Section</th><th>What it shows</th></tr>
-      <tr><td>Needs attention</td><td>Counts of things to act on: overdue tasks, overdue next steps, deals past their close date, stale deals, stale leads and potential duplicates.</td></tr>
-      <tr><td>Totals</td><td>How many leads, contacts, companies and deals you have.</td></tr>
-      <tr><td>Pipeline</td><td>Open deals, open pipeline value, weighted pipeline and average deal.</td></tr>
+      <tr><td>Needs attention</td><td>Counts of things to act on: overdue tasks, overdue next steps, deals past their close date, stale deals and stale leads.</td></tr>
+      <tr><td>Totals</td><td>How many leads, contacts, companies and deals you have, and the lead conversion rate.</td></tr>
+      <tr><td>Pipeline</td><td>Open deals, open pipeline value, weighted pipeline and open tasks.</td></tr>
       <tr><td>Performance</td><td>For a chosen period (7, 30 or 90 days, or all time), and optionally one assignee: won value, deals won and lost, win rate, new leads, average deal and sales cycle. With a period chosen, each tile shows the change against the period before it.</td></tr>
       <tr><td>Pipeline by stage</td><td>How many deals and how much value sit in each stage.</td></tr>
       <tr><td>Deals Closing Soon, Tasks Due Soon</td><td>The next things on the calendar.</td></tr>
@@ -82,7 +86,7 @@
     </table></div>
 
     <h2 id="tiles-are-shortcuts">Tiles are shortcuts<a class="h-anchor" href="#tiles-are-shortcuts" aria-label="Link to this section">#</a></h2>
-    <p>A tile that names a group of records is a filter. Click <em>Stale</em> or <em>No Next Step</em> and you land on the Deals list already narrowed to exactly those deals. Use it as a daily starting point.</p>
+    <p>A tile that names a group of records is a filter. Click <em>Stale deals</em>, for example, and you land on the Deals list already narrowed to exactly those deals. Use it as a daily starting point.</p>
 
     <h2 id="how-the-key-numbers-are-worked-out">How the key numbers are worked out<a class="h-anchor" href="#how-the-key-numbers-are-worked-out" aria-label="Link to this section">#</a></h2>
     <ul>
@@ -91,8 +95,11 @@
       <li><strong>Weighted pipeline</strong>: see <a href="pipeline.html#weighted-pipeline">Leads, deals and the pipeline</a>.</li>
       </ul>
     <p>The currency of every amount comes from <a href="settings.html">Settings</a>.</p>
+
+    <h2 id="how-fresh-the-figures-are">How fresh the figures are<a class="h-anchor" href="#how-fresh-the-figures-are" aria-label="Link to this section">#</a></h2>
+    <p>Dashboard and Reports figures are worked out from a summary the app refreshes every few minutes, so a change you just saved can take a little while to show. The line under the title says when the figures were worked out; press <strong>Refresh</strong> to update them now.</p>
     <div class="pagenav"><a class="prev" href="bulk-csv.html"><small>Previous</small>Bulk actions, import and export</a><a class="next" href="reports.html"><small>Next</small>Reports</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
@@ -100,6 +107,7 @@
     <a href="#what-is-on-it">What is on it</a>
     <a href="#tiles-are-shortcuts">Tiles are shortcuts</a>
     <a href="#how-the-key-numbers-are-worked-out">How the key numbers are worked out</a>
+    <a href="#how-fresh-the-figures-are">How fresh the figures are</a>
   </nav>
 </div>
 <script src="assets/site.js"></script>

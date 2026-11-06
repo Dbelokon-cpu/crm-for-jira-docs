@@ -1,46 +1,48 @@
 <!--meta {"title": "Privacy policy", "desc": "A Jira app by Vudia. This page explains exactly what the app reads from Jira, what it stores, and what it never touches."} -->
 <section id="summary">
       <h2>Summary</h2>
-      <p>CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. It has no servers of its own and makes no outbound network call to anything outside Atlassian. We do not operate any system that receives your data, and we cannot see the data your site holds in the app. The app stores the records your users enter (leads, contacts, companies, deals, products, tasks and notes) in Forge storage, scoped to your own site.</p>
+      <p>Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. It has no servers of its own and makes no outbound network call to anything outside Atlassian. We do not operate any system that receives your data, and we cannot see the data your site holds in the app. The app stores the records your users enter (leads, contacts, companies, deals, products, tasks and notes) in Forge storage, scoped to your own site. The only thing it writes to Jira is a short copy of a record's details in its own read-only fields on work items linked to that record.</p>
     </section>
 
     <section id="reads">
       <h2>What it reads from Jira</h2>
       <p>Always live, using the signed-in user's own Jira permissions:</p>
       <ul>
-        <li>A work item's key, summary and status, when a user links a record to it</li>
+        <li>A work item's key, summary and status, when a user links a record to it and when a record's card shows it</li>
         <li>People's display names and profiles, to show who owns, assigned or changed a record</li>
         <li>User search results, for the owner and assignee pickers</li>
-        <li>Whether the user holds the site's <code class="field">ADMINISTER</code> permission, to gate the workspace settings</li>
+        <li>Whether the user holds the site's <code class="field">ADMINISTER</code> permission, to gate the workspace settings and data tools</li>
       </ul>
       <p>None of it is copied anywhere outside your site.</p>
     </section>
 
     <section id="writes">
       <h2>What it writes to Jira</h2>
-      <p>Nothing. The app never creates, edits, transitions or comments on a Jira issue. It only reads.</p>
+      <p>When a record is linked to a Jira work item, the app writes a short copy of its details to the app's four read-only custom fields on that work item, so that it can be found with Jira search. The copy holds record names, deal stage, amount and close date, lead status, rating and source, contact title, company name, industry and country, and the owner's or assignee's account id. It <strong>never</strong> holds email addresses or phone numbers.</p>
+      <p>Anyone who can see the work item can read those fields. They are updated when the record changes, and cleared when it is unlinked or deleted. The app never creates, transitions or comments on a work item, and writes to no other field.</p>
     </section>
 
     <section id="stores">
       <h2>What it stores</h2>
-      <p>In Forge storage, scoped to your site: the leads, contacts, companies, deals, products, tasks, notes and product line items your users create, the audit trail (the latest 500 entries), each person's saved views, and the workspace settings (currency and stale-deal threshold).</p>
+      <p>In Forge storage, scoped to your site: the leads, contacts, companies, deals, products, tasks, notes and product line items your users create, custom field values, the audit trail (the latest 500 entries), each person's saved views and side-menu choice, a summary used by the Dashboard and Reports, and the workspace settings (currency, stale-deal threshold, deal stages and custom field definitions).</p>
       <p>Contacts, companies and leads can include the personal details of <em>your</em> customers and prospects, such as names, email addresses, phone numbers, job titles and LinkedIn links. That data belongs to you: you decide what to enter, and you are responsible for having a lawful basis to keep it.</p>
       <div class="not-list">
         <span class="not-pill">passwords</span>
         <span class="not-pill">API tokens</span>
         <span class="not-pill">payment details</span>
-        <span class="not-pill">Jira issue content beyond what's listed above</span>
+        <span class="not-pill">Jira work item content beyond what's listed above</span>
       </div>
     </section>
 
     <section id="personal-data">
       <h2>Atlassian account data</h2>
       <p>The app stores the Atlassian account ID of the people who appear on records: the owner or assignee, and the person who created or last changed a record or made an audit-trail entry. It stores display names only for the moment they are shown. It stores no Atlassian email address, password or token.</p>
+      <p>Once a week the app reports the account IDs it holds to Atlassian's Personal data reporting API. When Atlassian reports an account as closed, the app removes that ID from every record (owned records become unassigned) and deletes that person's saved views.</p>
     </section>
 
     <section id="retention">
       <h2>Retention &amp; deletion</h2>
-      <p>Data stays in your site's Forge storage until your users delete it in the app, or until the app is uninstalled. Deleting a record in the app is permanent. Deleting a deal also deletes its line items and notes; the audit trail keeps a line saying it was deleted until that line ages out. Removal of storage after uninstall follows Atlassian's own Forge retention policy.</p>
+      <p>Data stays in your site's Forge storage until your users delete it in the app, or until the app is uninstalled. Deleting a record in the app is permanent. Deleting a deal also deletes its line items and notes; the audit trail keeps a line saying it was deleted until that line ages out. After an uninstall Atlassian keeps Forge hosted storage for 28 days and then removes it; reinstalling does not bring the data back on its own. See <a href="https://developer.atlassian.com/platform/forge/storage-reference/hosted-storage-data-lifecycle/">Atlassian's hosted storage data lifecycle</a>.</p>
     </section>
 
     <section id="location">
@@ -50,7 +52,7 @@
 
     <section id="logs">
       <h2>Logs</h2>
-      <p>The app writes very little to logs, for example the number of old audit entries it removed. It does not write the contents of records to logs.</p>
+      <p>The app writes very little to logs, and only counts, for example the number of old audit entries it removed. It does not write ids, names or the contents of records to logs.</p>
     </section>
 
     <section id="tracking">

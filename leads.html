@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leads · CRM for Jira documentation</title>
+<title>Leads · Dealtrail CRM documentation</title>
 <meta name="description" content="Capture prospects, rate and assign them, work them on a board or in a table, and convert the good ones into deals.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -78,26 +82,27 @@
       <tr><td>Contact and company</td><td>Link to an existing contact or company, or just type the names.</td></tr>
       <tr><td>Email, phone</td><td>Checked for a sensible format. Two leads (or contacts) cannot share one email address.</td></tr>
       <tr><td>Jira work item</td><td>Optional. See <a href="jira.html">Linking to Jira</a>.</td></tr>
+      <tr><td>Custom fields</td><td>Any <a href="custom-fields.html">fields your administrator added</a>.</td></tr>
     </table></div>
     <p>A lead can also carry <strong>products</strong>, the things the prospect asked about. They carry over when you convert.</p>
 
     <h2 id="board-and-table">Board and table<a class="h-anchor" href="#board-and-table" aria-label="Link to this section">#</a></h2>
-    <p>Switch between <strong>Table</strong> and <strong>Kanban</strong> with the buttons above the list. The board has a column per status. The table has sortable columns (click a heading) and the same quick filters as everywhere: see <a href="finding.html">Search, filters and saved views</a>. The tiles above the list, such as <em>My Leads</em> and <em>Unassigned</em>, are filters too.</p>
+    <p>Switch between <strong>Table</strong> and <strong>Kanban</strong> with the buttons above the list. The board has a column per status: drag a card to another column to change its status. Each column shows its first 25 cards and says how many more there are. The table has sortable columns (click a heading) and the same quick filters as everywhere: see <a href="finding.html">Search, filters and saved views</a>. The tiles above the list, such as <em>My Leads</em> and <em>Unassigned</em>, are filters too.</p>
 
     <h2 id="converting-a-lead">Converting a lead<a class="h-anchor" href="#converting-a-lead" aria-label="Link to this section">#</a></h2>
     <p>Open the lead and press <strong>Convert to Deal</strong>, then confirm. The app:</p>
     <ul>
-      <li>creates a deal in the <em>New</em> stage, with an amount equal to the lead's products;</li>
-      <li>uses the lead's contact and company if they are linked, or finds a company with the same name, or <strong>creates</strong> a new contact and company from the names on the lead;</li>
+      <li>creates a deal in the first stage of your pipeline (<em>New</em> unless your administrator changed it), with an amount equal to the lead's products;</li>
+      <li>uses the lead's contact and company if they are linked, or finds a company with the same name and a contact with the same email, or <strong>creates</strong> a new contact and company from the names on the lead;</li>
       <li>carries over the lead's products;</li>
       <li>marks the lead <em>Converted</em> and links the two records both ways.</li>
     </ul>
     <p>The lead's card then shows the <strong>Converted deal</strong>, and you can open it from there.</p>
 
     <h2 id="losing-a-lead">Losing a lead<a class="h-anchor" href="#losing-a-lead" aria-label="Link to this section">#</a></h2>
-    <p>Set the status to <em>Lost</em> and choose a reason: Unqualified, No Response, Not Interested, Duplicate, Wrong Contact or Other. <a href="reports.html#leads">Reports</a> count lost leads by reason, so a vague "Other" is a missed chance to learn something.</p>
+    <p>Set the status to <em>Lost</em>, or drag the card to that column, and choose a reason: Unqualified, No Response, Not Interested, Duplicate, Wrong Contact or Other. <a href="reports.html#leads">Reports</a> count lost leads by reason, so a vague "Other" is a missed chance to learn something.</p>
     <div class="pagenav"><a class="prev" href="records.html"><small>Previous</small>Records, notes and timeline</a><a class="next" href="deals.html"><small>Next</small>Deals</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

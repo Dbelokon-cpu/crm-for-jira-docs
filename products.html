@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Products · CRM for Jira documentation</title>
+<title>Products · Dealtrail CRM documentation</title>
 <meta name="description" content="A catalogue of what you sell, with price, cost and margin, ready to attach to leads and deals.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -72,7 +76,7 @@
     <div class="tablewrap"><table>
       <tr><th>Field</th><th>Notes</th></tr>
       <tr><td>Name</td><td>Required.</td></tr>
-      <tr><td>SKU</td><td>Your own code for the product. Two products with the same SKU show up under <a href="reports.html#data-quality">Potential Duplicates</a>.</td></tr>
+      <tr><td>SKU</td><td>Your own code for the product. Two products cannot share one.</td></tr>
       <tr><td>Price</td><td>What you charge. Zero or more.</td></tr>
       <tr><td>Cost</td><td>What it costs you. The list shows the <strong>margin</strong> from price and cost.</td></tr>
       <tr><td>Category</td><td>Free text, used to group products in reports.</td></tr>
@@ -82,12 +86,11 @@
 
     <h2 id="using-products">Using products<a class="h-anchor" href="#using-products" aria-label="Link to this section">#</a></h2>
     <p>Attach products to a <a href="leads.html">lead</a> or a <a href="deals.html#products-on-a-deal">deal</a> as line items. A product's own card shows <strong>which deals use it</strong>. The <em>Unused</em> filter lists products no deal uses yet, which is handy for tidying the catalogue.</p>
-    <p>Revenue reports group won deals by product and by category: see <a href="reports.html#revenue">Reports → Revenue</a>.</p>
 
     <h2 id="deleting-a-product">Deleting a product<a class="h-anchor" href="#deleting-a-product" aria-label="Link to this section">#</a></h2>
     <p>You are asked to confirm. Products can be deleted in bulk: see <a href="bulk-csv.html">Bulk actions</a>.</p>
     <div class="pagenav"><a class="prev" href="contacts-companies.html"><small>Previous</small>Contacts and companies</a><a class="next" href="tasks.html"><small>Next</small>Tasks</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

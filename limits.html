@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Limits and behaviour · CRM for Jira documentation</title>
+<title>Limits and behaviour · Dealtrail CRM documentation</title>
 <meta name="description" content="Every limit and fixed behaviour in one place: sizes, formats and what happens at the edges.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html" aria-current="page">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -76,30 +80,37 @@
       <tr><td>Stale threshold</td><td class="num">1–365 days</td><td>Refused outside the range.</td></tr>
       <tr><td>Entries kept in the audit trail</td><td class="num">500</td><td>The oldest are removed as new ones arrive. See <a href="activities.html">Activities</a>.</td></tr>
       <tr><td>Activities shown on screen</td><td class="num">100</td><td>The newest 100 of those kept.</td></tr>
-      <tr><td>Search results per record type</td><td class="num">10</td><td>The count of all matches is still shown.</td></tr>
+      <tr><td>Records per section</td><td class="num">5,000</td><td>What sections are designed for. Beyond it, opening a section gets slower. See below.</td></tr>
+      <tr><td>Open deal stages</td><td class="num">12</td><td>Add Stage is refused. Won and Lost are extra.</td></tr>
+      <tr><td>Custom fields per record type</td><td class="num">15</td><td>Add Field is refused.</td></tr>
+      <tr><td>Rows shown per page in a list</td><td class="num">50</td><td>Page numbers appear under the table. Search and filters cover the whole list.</td></tr>
+      <tr><td>Cards shown per Kanban column</td><td class="num">25</td><td>The column says how many more there are.</td></tr>
     </table></div>
 
     <h2 id="how-much-data-is-comfortable">How much data is comfortable<a class="h-anchor" href="#how-much-data-is-comfortable" aria-label="Link to this section">#</a></h2>
-    <p>The app loads your records when it opens and does the searching, sorting and filtering in your browser. That makes it quick and simple for a small team. It also means that the more records you have, the longer it takes to open, and the longer reports take to calculate.</p>
-    <p>A few thousand records per section is comfortable. If the app starts to feel slow to open or to save, tell your administrator and <a href="faq.html#support">contact support</a>. Pages that need to look at everything, such as global search, Potential Duplicates and some of the revenue reports, feel it first.</p>
+    <p>Each section loads its own records when you open it, and does the searching, sorting and filtering in your browser. Dashboard and Reports use a compact summary instead of reading every record.</p>
+    <p>Sections are designed for up to 5,000 records each. <a href="settings.html#data-size">Settings → Data size</a> shows how close a site is. If a section starts to feel slow, tell your administrator and <a href="faq.html#support">contact support</a>.</p>
 
     <h2 id="behaviour">Behaviour<a class="h-anchor" href="#behaviour" aria-label="Link to this section">#</a></h2>
     <div class="tablewrap"><table>
       <tr><th>Topic</th><th>How it behaves</th></tr>
       <tr><td>Currency</td><td>One currency for the whole workspace, set in Settings. Amounts are never converted.</td></tr>
-      <tr><td>Pipeline</td><td>One pipeline with six fixed stages. They cannot be renamed or added to.</td></tr>
+      <tr><td>Pipeline</td><td>One pipeline per site. A Jira administrator can change the stages before Won and Lost.</td></tr>
       <tr><td>Dates</td><td>Typed as <code>YYYY-MM-DD</code>. There is no date picker.</td></tr>
       <tr><td>Phone numbers</td><td>7 to 20 characters: digits, spaces, <code>+ - ( ) .</code></td></tr>
       <tr><td>Email addresses</td><td>Must look like an email. Two contacts, or two leads, cannot share one.</td></tr>
       <tr><td>Amounts and prices</td><td>Zero or more.</td></tr>
-      <tr><td>Drag and drop</td><td>Not available. Change a deal's stage with its selector.</td></tr>
+      <tr><td>Kanban boards</td><td>Drag a card to change a deal's stage or a lead's status. Won, Lost and a lost lead ask for a reason first.</td></tr>
+      <tr><td>Dashboard and Reports</td><td>Worked out from a summary refreshed every few minutes, so they can trail the latest saves.</td></tr>
+      <tr><td>SKUs</td><td>Two products cannot share one.</td></tr>
+      <tr><td>Not included</td><td>Email and calendar sync, file attachments on records, email notifications and more than one pipeline.</td></tr>
       <tr><td>Export and import</td><td>CSV as text you copy and paste, not as a file download.</td></tr>
       <tr><td>Saved views</td><td>Belong to the person who made them.</td></tr>
       <tr><td>Deleting</td><td>Permanent. There is no recycle bin.</td></tr>
-      <tr><td>Jira data</td><td>Only read, never changed. See <a href="privacy.html">Privacy</a>.</td></tr>
+      <tr><td>Jira data</td><td>The only thing the app writes is its own read-only fields on linked work items. See <a href="privacy.html#writes">Privacy</a>.</td></tr>
     </table></div>
-    <div class="pagenav"><a class="prev" href="jira.html"><small>Previous</small>Linking to Jira and sharing records</a><a class="next" href="permissions.html"><small>Next</small>Permissions and access</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="pagenav"><a class="prev" href="automation.html"><small>Previous</small>Jira Automation</a><a class="next" href="permissions.html"><small>Next</small>Permissions and access</a></div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

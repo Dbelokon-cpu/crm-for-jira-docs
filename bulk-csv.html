@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bulk actions, import and export · CRM for Jira documentation</title>
+<title>Bulk actions, import and export · Dealtrail CRM documentation</title>
 <meta name="description" content="Change many records at once, bring in existing data from a spreadsheet, and take data out.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -75,7 +79,7 @@
       <tr><td>Deals</td><td>Assign owner, change stage, delete</td></tr>
       <tr><td>Contacts, Companies</td><td>Assign owner, delete</td></tr>
       <tr><td>Products</td><td>Delete</td></tr>
-      <tr><td>Tasks</td><td>Assign, change priority, complete, delete</td></tr>
+      <tr><td>Tasks</td><td>Assign, change priority, delete</td></tr>
     </table></div>
     <p>Deleting asks you to confirm and states how many records will go. Bulk deletion cannot be undone.</p>
 
@@ -95,14 +99,15 @@
       </table></div>
       <p>The columns it recognises for contacts are <code>Name</code>, <code>Title</code>, <code>Company</code>, <code>Email</code>, <code>Secondary Email</code>, <code>Phone</code>, <code>LinkedIn</code>, <code>Tags</code> and <code>Jira Work Item</code>. A company is matched by name to one that already exists, so import companies first.</p>
     </div>
-    <div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records. Check the result, and use <a href="reports.html#data-quality">Potential Duplicates</a> if you have to clean up.</p></div>
+    <div class="callout warn"><p><strong>Import twice and you get two copies.</strong> Import does not look for existing records, apart from refusing an email address that is already in use. Check the result, and <a href="contacts-companies.html#merging-duplicates">merge</a> any contacts or companies you have to clean up.</p></div>
 
     <h2 id="export-to-csv">Export to CSV<a class="h-anchor" href="#export-to-csv" aria-label="Link to this section">#</a></h2>
-    <p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those.</p>
+    <p>Press <strong>Export CSV</strong> on a list. A window shows the data as text: select all (Ctrl+A or Cmd+A), copy, and paste it into a spreadsheet or a file ending in <code>.csv</code>. The export follows your current filters. If rows are selected, you can export just those. <a href="custom-fields.html">Custom fields</a> appear as extra columns.</p>
     <p>Several report tables have their own <strong>Export to CSV</strong> button, and <a href="settings.html">Settings</a> can export everything.</p>
+    <p>A cell that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> is exported with a leading <code>'</code>, so a spreadsheet does not run it as a formula. Import removes it again.</p>
     <p>The app shows CSV as text, not as a download, because the page it runs in cannot start a file download.</p>
     <div class="pagenav"><a class="prev" href="finding.html"><small>Previous</small>Search, filters and saved views</a><a class="next" href="dashboard.html"><small>Next</small>Dashboard</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

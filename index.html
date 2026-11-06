@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRM for Jira documentation</title>
+<title>Dealtrail CRM documentation</title>
 <meta name="description" content="A CRM inside Jira: leads, deals, contacts, companies, products and tasks in one place, linked to your Jira work items. No separate service and no separate login.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -65,9 +69,9 @@
 
   <main id="content">
     <div class="crumb">Documentation</div>
-    <h1>CRM for Jira</h1>
+    <h1>Dealtrail CRM</h1>
     <p class="subtitle">A CRM inside Jira: leads, deals, contacts, companies, products and tasks in one place, linked to your Jira work items. No separate service and no separate login.</p>
-    <p>Many teams already run their work in Jira but keep their customers in a spreadsheet or a separate CRM. CRM for Jira puts the sales side next to the delivery side: you track who might buy, what you are selling and what to do next, and you can point any record at the Jira work item that delivers it.</p>
+    <p>Many teams already run their work in Jira but keep their customers in a spreadsheet or a separate CRM. Dealtrail CRM puts the sales side next to the delivery side: you track who might buy, what you are selling and what to do next, and you can point any record at the Jira work item that delivers it.</p>
 
     <div class="cta-row">
       <a class="cta primary" href="quick-start.html">Quick start →</a>
@@ -104,7 +108,7 @@
           <li><a href="contacts-companies.html">Contacts and companies</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="records.html">Records, notes and timeline</a></li>
-          <li><a href="reports.html#data-quality">Potential duplicates</a></li>
+          <li><a href="custom-fields.html">Custom fields</a></li>
         </ul>
       </div>
       <div class="card">
@@ -112,9 +116,19 @@
         <p>You install the app and set it up.</p>
         <ul>
           <li><a href="settings.html">Settings</a></li>
+          <li><a href="automation.html">Jira Automation</a></li>
           <li><a href="permissions.html">Permissions and access</a></li>
           <li><a href="limits.html">Limits and behaviour</a></li>
           <li><a href="privacy.html">Privacy</a> and <a href="security.html">security</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 id="delivery-team">Delivery team<a class="h-anchor" href="#delivery-team" aria-label="Link to this section">#</a></h3>
+        <p>You work in Jira and need to see the customer behind the work.</p>
+        <ul>
+          <li><a href="jira.html">The CRM panel on a work item</a></li>
+          <li><a href="jql.html">Finding work items with JQL</a></li>
+          <li><a href="jira.html#my-crm-follow-ups-gadget">My CRM follow-ups gadget</a></li>
         </ul>
       </div>
     </div>
@@ -123,17 +137,19 @@
     <p>The app has one pipeline and a handful of record types. Each links to the others, so you can move from a deal to its contact, its company and its tasks without searching.</p>
     <ol class="steps">
       <li><strong>Leads</strong> are people or companies that might buy. You rate them, work them and either convert or lose them.</li>
-      <li><strong>Deals</strong> are sales you are working on. They move through six stages and carry an amount, a close date and a next step.</li>
+      <li><strong>Deals</strong> are sales you are working on. They move through the stages of your pipeline and carry an amount, a close date and a next step.</li>
       <li><strong>Contacts and companies</strong> are who you sell to. A contact belongs to a company, and a company can have a parent.</li>
       <li><strong>Products</strong> are your catalogue. Attach them to a deal and its amount follows.</li>
       <li><strong>Tasks and notes</strong> record what to do and what happened, on any record.</li>
       <li><strong>Dashboard and reports</strong> turn all of it into numbers: what needs attention now, and how a period compares with the last one.</li>
+      <li><strong>Jira work items</strong> connect it all to delivery: a work item shows its customer and deal, JQL can find work by CRM data, and Automation rules can update the CRM.</li>
     </ol>
 
     <h2 id="where-to-open-it">Where to open it<a class="h-anchor" href="#where-to-open-it" aria-label="Link to this section">#</a></h2>
-    <p>Open <strong>CRM for Jira</strong> from the <strong>Apps</strong> menu in the Jira sidebar. The app has one global page with a menu on the left: Leads, Deals, Contacts, Companies, Products, Tasks, Dashboard, Activities, Reports and Settings. It does not add anything to individual Jira projects.</p>
+    <p>Open <strong>Dealtrail CRM</strong> from the <strong>Apps</strong> menu in the Jira sidebar. The app has one global page with a menu on the left, in four groups: <strong>Sales</strong> (Leads, Deals, Contacts, Companies, Products), <strong>Work</strong> (Tasks, Activities), <strong>Insights</strong> (Dashboard, Reports) and <strong>Workspace</strong> (Settings). The arrow at the top of the menu collapses it to a column of icons, and the app remembers that for you alone.</p>
+    <p>The app also adds a <a href="jira.html">CRM panel</a> to every Jira work item, four <a href="jql.html">read-only fields</a> for search, a <a href="jira.html#my-crm-follow-ups-gadget">dashboard gadget</a> and <a href="automation.html">Automation actions</a>.</p>
     <div class="pagenav"><a class="next" href="quick-start.html"><small>Next</small>Quick start</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

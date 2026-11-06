@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quick start · CRM for Jira documentation</title>
+<title>Quick start · Dealtrail CRM documentation</title>
 <meta name="description" content="Add a lead, convert it into a deal, win it and see it in the numbers, in about ten minutes. The same example is used throughout these docs.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-144.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">CRM FOR JIRA</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -43,7 +44,10 @@
         <a href="reports.html">Reports</a>
         <a href="activities.html">Activities</a>
         <a href="settings.html">Settings</a>
+        <a href="custom-fields.html">Custom fields</a>
         <a href="jira.html">Linking to Jira and sharing records</a>
+        <a href="jql.html">Finding work items with JQL</a>
+        <a href="automation.html">Jira Automation</a>
         <span class="toc-group-label">Reference</span>
         <a href="limits.html">Limits and behaviour</a>
         <a href="permissions.html">Permissions and access</a>
@@ -68,7 +72,7 @@
     <h1>Quick start</h1>
     <p class="subtitle">Add a lead, convert it into a deal, win it and see it in the numbers, in about ten minutes. The same example is used throughout these docs.</p>
     <h2 id="the-example">The example<a class="h-anchor" href="#the-example" aria-label="Link to this section">#</a></h2>
-    <p>These docs follow one small sale so you can trace it from page to page. You do not need the same data.</p>
+    <p>These docs follow one small sale so you can trace it from page to page. You do not need the same data. To explore with something already in place, a Jira administrator can add an example pipeline with <a href="settings.html#data-administration">Load Sample Data</a>.</p>
     <div class="example">
       <strong>Example: Northwind Traders</strong>
       <p>A company called Northwind Traders asks about an annual licence. Sarah Miller is the person you talk to. You expect to sell the <em>Team licence</em> product for 12,000 USD and hope to close by the end of the month.</p>
@@ -76,7 +80,7 @@
 
     <h2 id="add-a-lead">Add a lead<a class="h-anchor" href="#add-a-lead" aria-label="Link to this section">#</a></h2>
     <ol class="steps">
-      <li>Open <strong>CRM for Jira</strong> from the Jira <strong>Apps</strong> menu and choose <strong>Leads</strong>.</li>
+      <li>Open <strong>Dealtrail CRM</strong> from the Jira <strong>Apps</strong> menu and choose <strong>Leads</strong>.</li>
       <li>Press <strong>Create Lead</strong>. Enter the name <em>Northwind Traders: annual licence</em>, contact <em>Sarah Miller</em>, her email, the source <em>Referral</em> and the rating <em>Warm</em>. Choose yourself as assignee.</li>
       <li>Press <strong>Create Lead</strong> to save. Only the name is required.</li>
     </ol>
@@ -93,14 +97,14 @@
     <ol class="steps">
       <li>Open the deal. Add the product <em>Team licence</em> (create it first under <strong>Products</strong> with a price of 12,000). The deal's amount follows its products.</li>
       <li>Set a <strong>Close date</strong> and a <strong>Next step</strong>, for example <em>Send proposal</em> with a due date.</li>
-      <li>Move the deal to <em>Discovery</em>, then <em>Proposal</em>, using the stage selector. Add a note after each call.</li>
+      <li>Move the deal to <em>Discovery</em>, then <em>Proposal</em>, by dragging its card on the board or with the stage selector. Add a note after each call.</li>
       <li>Add a <strong>task</strong> from the card: <em>Call Sarah on Friday</em>.</li>
     </ol>
 
     <h2 id="close-it">Close it<a class="h-anchor" href="#close-it" aria-label="Link to this section">#</a></h2>
     <ol class="steps">
       <li>When the customer signs, press <strong>Mark as Won</strong> and choose a reason, for example <em>Product Fit</em>.</li>
-      <li>Open <strong>Dashboard</strong>: the deal now counts in <em>Deals Won</em> and in the win rate.</li>
+      <li>Open <strong>Dashboard</strong>: the deal now counts in <em>Deals won</em> and in the win rate. The figures can trail a save by a few minutes; press <strong>Refresh</strong> to update them now.</li>
       <li>Open <strong>Reports</strong> to see it under <em>Won Deals by Reason</em> and in the period comparison.</li>
     </ol>
     <p>If you lose a deal instead, press <strong>Mark as Lost</strong> and pick a reason. Always pick one: reports break results down by reason.</p>
@@ -110,10 +114,11 @@
       <li>Bring in existing customers with <a href="bulk-csv.html#import">CSV import</a>.</li>
       <li>Set up <a href="finding.html#saved-views">saved views</a> for the lists you open every day.</li>
       <li>Link a deal to the Jira work item that delivers it: <a href="jira.html">Linking to Jira</a>.</li>
-      <li>Check <a href="settings.html">Settings</a> for your currency and how long before a deal counts as stale.</li>
+      <li>Check <a href="settings.html">Settings</a> for your currency, your deal stages and how long before a deal counts as stale.</li>
+      <li>Add <a href="custom-fields.html">fields of your own</a> to the records.</li>
     </ul>
     <div class="pagenav"><a class="prev" href="index.html"><small>Previous</small>Overview</a><a class="next" href="pipeline.html"><small>Next</small>Leads, deals and the pipeline</a></div>
-    <div class="colophon">CRM for Jira is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
