@@ -1,6 +1,8 @@
 # Dealtrail CRM: Documentation
 
-Public documentation, privacy policy and security policy for the Dealtrail CRM app by Vudia. The app's source code lives in a separate, private repository; this one holds only the user-facing docs.
+Public documentation, privacy policy and security policy for the Dealtrail CRM app by Vudia.
+
+Live at https://crm.vudia.site/ (the `CNAME` file and a CNAME record `crm` → `dbelokon-cpu.github.io` in Cloudflare, DNS only). The old address https://dbelokon-cpu.github.io/crm-for-jira-docs/ redirects to it. The app's source code lives in a separate, private repository; this one holds only the user-facing docs.
 
 ## How the site is made
 
