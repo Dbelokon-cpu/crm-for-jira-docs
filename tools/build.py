@@ -19,6 +19,14 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
 SITE = "Dealtrail CRM"
+# Public address of the site (from the CNAME file) and the app's Marketplace
+# listing. Used for canonical links, sitemap.xml, robots.txt, llms.txt and the
+# structured data on the overview page, so search engines and AI assistants
+# can find and describe the app correctly.
+BASE_URL = "https://" + (ROOT / "CNAME").read_text(encoding="utf-8").strip() + "/"
+LISTING_URL = ''
+APP_FULL_NAME = 'Dealtrail CRM for Jira'
+
 NAV = [
     ("Start", [("index", "Overview"), ("quick-start", "Quick start")]),
     ("Concepts", [("pipeline", "Leads, deals and the pipeline"), ("records", "Records, notes and timeline")]),
@@ -46,7 +54,8 @@ TEMPLATE = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{page_title}</title>
 <meta name="description" content="{desc}">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="canonical" href="{canonical}">
+{head_extra}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-144.png">
@@ -153,8 +162,58 @@ def pagenav(slug):
     return f'    <div class="pagenav">{prev}{nxt}</div>' if prev or nxt else ""
 
 
+def structured_data(desc):
+    """schema.org description of the app for the overview page (JSON-LD)."""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": APP_FULL_NAME,
+        "description": desc,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Jira Cloud (Atlassian Forge)",
+        "url": LISTING_URL or BASE_URL,
+        "publisher": {"@type": "Organization", "name": "Vudia", "email": "info@vudia.site"},
+    }
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>\n"
+
+
+def write_discovery(descs):
+    """sitemap.xml, robots.txt and llms.txt, regenerated on every build."""
+    import datetime
+    today = datetime.date.today().isoformat()
+    urls = [BASE_URL + ("" if slug == "index" else f"{slug}.html") for slug in ORDER if slug in descs]
+    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sitemap += [f"  <url><loc>{html.escape(u)}</loc><lastmod>{today}</lastmod></url>" for u in urls]
+    sitemap.append("</urlset>")
+    (ROOT / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
+
+    # Everyone may crawl, including the AI assistants' crawlers, named
+    # explicitly so a future blanket rule elsewhere cannot block them by accident.
+    bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+            "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot"]
+    robots = [f"User-agent: {b}\nAllow: /\n" for b in bots] + ["User-agent: *\nAllow: /\n", f"Sitemap: {BASE_URL}sitemap.xml\n"]
+    (ROOT / "robots.txt").write_text("\n".join(robots), encoding="utf-8")
+
+    # llms.txt: a short, plain map of the site for AI assistants (llmstxt.org).
+    title, desc = descs.get("index", (SITE, ""))
+    lines = [f"# {APP_FULL_NAME}", "", f"> {desc}", "",
+             f"{APP_FULL_NAME} is a Jira Cloud app by Vudia, built on Atlassian Forge."]
+    if LISTING_URL:
+        lines.append(f"Atlassian Marketplace listing: {LISTING_URL}")
+    lines.append("Support: info@vudia.site")
+    for group, items in NAV:
+        entries = [(slug, label) for slug, label in items if slug in descs and slug != "index"]
+        if not entries:
+            continue
+        lines += ["", f"## {group}", ""]
+        lines += [f"- [{descs[slug][0]}]({BASE_URL}{slug}.html): {descs[slug][1]}" for slug, _ in entries]
+    (ROOT / "llms.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main():
     search, problems = [], []
+    descs = {}
     ids, links = {}, []
     for slug in ORDER:
         path = SRC / f"{slug}.html"
@@ -167,6 +226,7 @@ def main():
             problems.append(f"src/{slug}.html: no <!--meta {{...}}--> header")
             continue
         meta = json.loads(m.group(1))
+        descs[slug] = (meta["title"], meta["desc"])
         body = add_ids(text[m.end():].strip("\n"))
         title = meta["title"]
         crumb = f'<a href="index.html">Docs</a> / {GROUP[slug]}' if slug != "index" else "Documentation"
@@ -175,6 +235,8 @@ def main():
             desc=html.escape(meta["desc"], quote=True), logo=LOGO, nav=nav_html(slug), crumb=crumb,
             title=html.escape(title), body="\n".join("    " + l if l.strip() else l for l in body.split("\n")),
             pagenav=pagenav(slug), toc=toc_for(body),
+            canonical=BASE_URL + ("" if slug == "index" else f"{slug}.html"),
+            head_extra=structured_data(meta["desc"]) if slug == "index" else "",
         )
         (ROOT / f"{slug}.html").write_text(page, encoding="utf-8")
         headings = " ".join(html.unescape(re.sub(r"<[^>]+>|#$", "", h)) for h in re.findall(r"<h[23][^>]*>(.*?)</h[23]>", body, flags=re.S))
@@ -199,11 +261,13 @@ def main():
         page_title=f"Page not found · {SITE} documentation", desc="This page does not exist.", logo=LOGO,
         nav=nav_html(""), crumb="Documentation", title="Page not found",
         body='    <p>That page does not exist or has moved. Try the <a href="index.html">overview</a> or search the docs.</p>',
-        pagenav="", toc="")
+        pagenav="", toc="", canonical=BASE_URL + "404.html", head_extra="")
     (ROOT / "404.html").write_text(page404, encoding="utf-8")
 
     (ROOT / "assets").mkdir(exist_ok=True)
     (ROOT / "assets" / "search-index.json").write_text(json.dumps(search, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    write_discovery(descs)
 
     if problems:
         print("\n".join(problems), file=sys.stderr)

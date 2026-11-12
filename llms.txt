@@ -1,0 +1,50 @@
+# Dealtrail CRM for Jira
+
+> A CRM inside Jira: leads, deals, contacts, companies, products and tasks in one place, linked to your Jira work items. No separate service and no separate login.
+
+Dealtrail CRM for Jira is a Jira Cloud app by Vudia, built on Atlassian Forge.
+Support: info@vudia.site
+
+## Start
+
+- [Quick start](https://crm.vudia.site/quick-start.html): Add a lead, convert it into a deal, win it and see it in the numbers, in about ten minutes. The same example is used throughout these docs.
+
+## Concepts
+
+- [Leads, deals and the pipeline](https://crm.vudia.site/pipeline.html): How a prospect becomes a sale: the statuses, the deal stages, win probability and the weighted forecast.
+- [Records, notes and timeline](https://crm.vudia.site/records.html): The card you get when you open any record, and the three tabs on it: tasks, notes and timeline.
+
+## Guides
+
+- [Leads](https://crm.vudia.site/leads.html): Capture prospects, rate and assign them, work them on a board or in a table, and convert the good ones into deals.
+- [Deals](https://crm.vudia.site/deals.html): Create deals, move them through the pipeline on a board or in a table, attach products, and close them as won or lost.
+- [Contacts and companies](https://crm.vudia.site/contacts-companies.html): Keep the people and organisations you sell to, link them to each other, and merge duplicates.
+- [Products](https://crm.vudia.site/products.html): A catalogue of what you sell, with price, cost and margin, ready to attach to leads and deals.
+- [Tasks](https://crm.vudia.site/tasks.html): To-dos, calls, emails and meetings, with due dates and priorities, on their own list or on any record.
+- [Search, filters and saved views](https://crm.vudia.site/finding.html): Find a record in seconds, narrow a list to what matters today, and keep your favourite filters one click away.
+- [Bulk actions, import and export](https://crm.vudia.site/bulk-csv.html): Change many records at once, bring in existing data from a spreadsheet, and take data out.
+- [Dashboard](https://crm.vudia.site/dashboard.html): The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.
+- [Reports](https://crm.vudia.site/reports.html): Breakdowns of pipeline, leads, revenue and outcomes, a period comparison, and a snapshot you can paste into a Jira comment.
+- [Activities](https://crm.vudia.site/activities.html): The audit trail: who created, changed, reassigned, converted, merged or deleted what, and when.
+- [Settings](https://crm.vudia.site/settings.html): The currency, the stale-deal threshold, your deal stages, custom fields and the data tools.
+- [Custom fields](https://crm.vudia.site/custom-fields.html): Add fields of your own to contacts, companies, deals and leads: text, number, date or dropdown.
+- [Linking to Jira and sharing records](https://crm.vudia.site/jira.html): Connect records to the Jira work items that deliver them, see the customer on the work item, and send a colleague straight to a record.
+- [Finding work items with JQL](https://crm.vudia.site/jql.html): Search Jira work items by deal stage, owner, lead status or company, and use the results in filters and boards.
+- [Jira Automation](https://crm.vudia.site/automation.html): Add Dealtrail CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM.
+
+## Reference
+
+- [Limits and behaviour](https://crm.vudia.site/limits.html): Every limit and fixed behaviour in one place: sizes, formats and what happens at the edges.
+- [Permissions and access](https://crm.vudia.site/permissions.html): Who can do what in the app, and which Jira permissions the app itself asks for.
+- [Glossary](https://crm.vudia.site/glossary.html): The terms used across these docs and in the app, in one place.
+
+## Help
+
+- [Troubleshooting](https://crm.vudia.site/troubleshooting.html): Symptom, likely cause and what to do, for the problems people meet most often.
+- [FAQ and support](https://crm.vudia.site/faq.html): Short answers to common questions, and how to reach support.
+- [What's new](https://crm.vudia.site/changelog.html): User-visible changes to Dealtrail CRM, newest first.
+
+## Policies
+
+- [Privacy policy](https://crm.vudia.site/privacy.html): A Jira app by Vudia. This page explains exactly what the app reads from Jira, what it stores, and what it never touches.
+- [Security policy](https://crm.vudia.site/security.html): How this app is built, what it can access, and how we handle a security report. For the technical reviewer, not just the end user.
