@@ -1,6 +1,6 @@
 # CRM for Jira by Vudia
 
-> A CRM inside Jira: leads, deals, contacts, companies, products and tasks in one place, linked to your Jira work items. No separate service and no separate login.
+> A CRM inside Jira: leads, deals, contacts, companies, products and tasks in one place, linked to the Jira work items that deliver them, so you always know what is closing next and where sales stand.
 
 CRM for Jira by Vudia is a Jira Cloud app by Vudia, built on Atlassian Forge.
 Atlassian Marketplace listing: https://marketplace.atlassian.com/apps/3433374711/crm
