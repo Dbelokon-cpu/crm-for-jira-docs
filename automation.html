@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jira Automation · Dealtrail CRM documentation</title>
-<meta name="description" content="Add Dealtrail CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM.">
+<title>Jira Automation · CRM documentation</title>
+<meta name="description" content="Add CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM.">
 <link rel="canonical" href="https://crm.vudia.site/automation.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLG2699H0J"></script>
 <script>
@@ -25,7 +25,7 @@ gtag('config', 'G-HLG2699H0J');
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -71,6 +71,7 @@ gtag('config', 'G-HLG2699H0J');
     </details>
     <div class="meta-card">
       <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Get the app</span><div class="meta-value"><a href="https://marketplace.atlassian.com/apps/3433374711/crm">Atlassian Marketplace</a></div></div>
       <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
     </div>
   </aside>
@@ -78,15 +79,15 @@ gtag('config', 'G-HLG2699H0J');
   <main id="content">
     <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
     <h1>Jira Automation</h1>
-    <p class="subtitle">Add Dealtrail CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM.</p>
+    <p class="subtitle">Add CRM steps to a Jira Automation rule, so that something happening in Jira updates the CRM.</p>
     <h2 id="the-four-actions">The four actions<a class="h-anchor" href="#the-four-actions" aria-label="Link to this section">#</a></h2>
-    <p>Search for "Dealtrail CRM" when adding an action to a rule.</p>
+    <p>Search for "CRM" when adding an action to a rule.</p>
     <div class="tablewrap"><table>
       <tr><th>Action</th><th>What it does</th></tr>
-      <tr><td>Move deals in Dealtrail CRM</td><td>Moves the open deals linked to a work item to a stage. Won and lost deals stay as they are, and a work item with no deals is skipped without an error.</td></tr>
-      <tr><td>Create lead in Dealtrail CRM</td><td>Creates a lead, linked to the work item if you keep <code>{{issue.key}}</code>.</td></tr>
-      <tr><td>Add note in Dealtrail CRM</td><td>Adds a note to every linked record of the type you choose.</td></tr>
-      <tr><td>Create task in Dealtrail CRM</td><td>Creates a task on the work item's linked record, taking a deal first, then a contact, company or lead.</td></tr>
+      <tr><td>Move deals in CRM</td><td>Moves the open deals linked to a work item to a stage. Won and lost deals stay as they are, and a work item with no deals is skipped without an error.</td></tr>
+      <tr><td>Create lead in CRM</td><td>Creates a lead, linked to the work item if you keep <code>{{issue.key}}</code>.</td></tr>
+      <tr><td>Add note in CRM</td><td>Adds a note to every linked record of the type you choose.</td></tr>
+      <tr><td>Create task in CRM</td><td>Creates a task on the work item's linked record, taking a deal first, then a contact, company or lead.</td></tr>
     </table></div>
     <p>Text fields accept smart values such as <code>{{issue.summary}}</code>.</p>
     <div class="example">
@@ -103,7 +104,7 @@ gtag('config', 'G-HLG2699H0J');
     <h2 id="what-rules-cannot-do">What rules cannot do<a class="h-anchor" href="#what-rules-cannot-do" aria-label="Link to this section">#</a></h2>
     <p>A rule can't start from a change in the CRM: Jira doesn't let apps add their own triggers.</p>
     <div class="pagenav"><a class="prev" href="jql.html"><small>Previous</small>Finding work items with JQL</a><a class="next" href="limits.html"><small>Next</small>Limits and behaviour</a></div>
-    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

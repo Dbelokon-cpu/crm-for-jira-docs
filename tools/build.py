@@ -18,14 +18,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
-SITE = "Dealtrail CRM"
+SITE = "CRM"
 # Public address of the site (from the CNAME file) and the app's Marketplace
 # listing. Used for canonical links, sitemap.xml, robots.txt, llms.txt and the
 # structured data on the overview page, so search engines and AI assistants
 # can find and describe the app correctly.
 BASE_URL = "https://" + (ROOT / "CNAME").read_text(encoding="utf-8").strip() + "/"
-LISTING_URL = ''
-APP_FULL_NAME = 'Dealtrail CRM for Jira'
+LISTING_URL = 'https://marketplace.atlassian.com/apps/3433374711/crm'
+APP_FULL_NAME = 'CRM for Jira by Vudia'
 
 NAV = [
     ("Start", [("index", "Overview"), ("quick-start", "Quick start")]),
@@ -74,7 +74,7 @@ gtag('config', 'G-HLG2699H0J');
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark">{logo}</div>
-      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -88,6 +88,7 @@ gtag('config', 'G-HLG2699H0J');
     </details>
     <div class="meta-card">
       <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Get the app</span><div class="meta-value"><a href="https://marketplace.atlassian.com/apps/3433374711/crm">Atlassian Marketplace</a></div></div>
       <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
     </div>
   </aside>
@@ -98,7 +99,7 @@ gtag('config', 'G-HLG2699H0J');
     <p class="subtitle">{desc}</p>
 {body}
 {pagenav}
-    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">

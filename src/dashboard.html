@@ -1,28 +1,31 @@
-<!--meta {"title": "Dashboard", "desc": "The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them."} -->
+<!--meta {"title": "Dashboard", "desc": "Where sales stand at a glance: headline figures against the period before, the pipeline funnel, revenue by month, and the deals and tasks that come next."} -->
 <h2>What is on it</h2>
-<p>The Dashboard answers "what needs me today?" before "how are we doing?". Its sections:</p>
+<p>Open <strong>Dashboard</strong>. From top to bottom:</p>
 <div class="tablewrap"><table>
-  <tr><th>Section</th><th>What it shows</th></tr>
-  <tr><td>Needs attention</td><td>Counts of things to act on: overdue tasks, overdue next steps, deals past their close date, stale deals and stale leads.</td></tr>
-  <tr><td>Totals</td><td>How many leads, contacts, companies and deals you have, and the lead conversion rate.</td></tr>
-  <tr><td>Pipeline</td><td>Open deals, open pipeline value, weighted pipeline and open tasks.</td></tr>
-  <tr><td>Performance</td><td>For a chosen period (7, 30 or 90 days, or all time), and optionally one assignee: won value, deals won and lost, win rate, new leads, average deal and sales cycle. With a period chosen, each tile shows the change against the period before it.</td></tr>
-  <tr><td>Pipeline by stage</td><td>How many deals and how much value sit in each stage.</td></tr>
-  <tr><td>Deals Closing Soon, Tasks Due Soon</td><td>The next things on the calendar.</td></tr>
-  <tr><td>Recently Won, Recent Activity</td><td>What just happened.</td></tr>
-  <tr><td>Trends</td><td>New leads, revenue and win rate over the last few months.</td></tr>
+  <tr><th>Part</th><th>What it shows</th></tr>
+  <tr><td>Headline figures</td><td>Eight cards: open deals, pipeline value, weighted pipeline, revenue won, deals won, win rate, new leads and conversion rate.</td></tr>
+  <tr><td>Pipeline funnel</td><td>How many deals sit in each stage, each stage in its own colour.</td></tr>
+  <tr><td>Revenue trend</td><td>The value of deals won in each of the last six months.</td></tr>
+  <tr><td>Active deals</td><td>The open deals closing soonest, with amount and stage. A close date that has passed is red.</td></tr>
+  <tr><td>My open tasks</td><td>Your own open tasks, soonest first, with priority.</td></tr>
 </table></div>
 
-<h2>Tiles are shortcuts</h2>
-<p>A tile that names a group of records is a filter. Click <em>Stale deals</em>, for example, and you land on the Deals list already narrowed to exactly those deals. Use it as a daily starting point.</p>
+<h2 id="period-and-assignee">Period and assignee</h2>
+<p>Choose <em>7 days</em>, <em>30 days</em>, <em>90 days</em> or <em>All time</em> at the top, and optionally one assignee. Revenue won, deals won, win rate, new leads and conversion rate follow the period. Open deals and pipeline value are as they stand now.</p>
+
+<h2 id="change">The change beside a figure</h2>
+<p>With a period chosen, a figure shows how it moved against the stretch of the same length just before: green when it moved the good way, red the bad way, yellow when it stayed the same. For lost deals, going up is the bad way. Hover the change to see the earlier value. <em>All time</em> has nothing before it, so it shows no change.</p>
+
+<h2>View all</h2>
+<p><strong>View all</strong> beside <em>Active deals</em> opens the Deals table with only open deals, sorted by close date. Beside <em>My open tasks</em> it opens Tasks with only your open tasks.</p>
 
 <h2>How the key numbers are worked out</h2>
 <ul>
-  <li><strong>Win rate</strong>: deals won divided by deals won plus lost in the period. Open deals are not counted. With no closed deals it shows a dash rather than 0%.</li>
-  <li><strong>Sales cycle</strong>: the average time from creating a deal to winning it, for deals won in the period.</li>
+  <li><strong>Win rate</strong>: deals won divided by deals won plus lost in the period. Open deals are not counted.</li>
+  <li><strong>Conversion rate</strong>: of the leads created in the period, the share converted to a deal.</li>
   <li><strong>Weighted pipeline</strong>: see <a href="pipeline.html#weighted-pipeline">Leads, deals and the pipeline</a>.</li>
-  </ul>
-<p>The currency of every amount comes from <a href="settings.html">Settings</a>.</p>
+</ul>
+<p>The currency of every amount comes from <a href="settings.html">Settings</a>. Things to act on today (overdue, stale, no next step) are counted at the top of the Leads, Deals and Tasks pages, where a click filters the list to them.</p>
 
 <h2 id="how-fresh-the-figures-are">How fresh the figures are</h2>
 <p>Dashboard and Reports figures are worked out from a summary the app refreshes every few minutes, so a change you just saved can take a little while to show. The line under the title says when the figures were worked out; press <strong>Refresh</strong> to update them now.</p>

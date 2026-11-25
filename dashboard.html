@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard · Dealtrail CRM documentation</title>
-<meta name="description" content="The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.">
+<title>Dashboard · CRM documentation</title>
+<meta name="description" content="Where sales stand at a glance: headline figures against the period before, the pipeline funnel, revenue by month, and the deals and tasks that come next.">
 <link rel="canonical" href="https://crm.vudia.site/dashboard.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLG2699H0J"></script>
 <script>
@@ -25,7 +25,7 @@ gtag('config', 'G-HLG2699H0J');
   <aside class="side">
     <a class="brand" href="index.html">
       <div class="brand-mark"><img src="assets/icon.svg" width="30" height="30" alt="" aria-hidden="true"></div>
-      <div><div class="brand-name">DEALTRAIL CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
+      <div><div class="brand-name">CRM</div><div class="brand-sub">Documentation · by Vudia</div></div>
     </a>
     <div class="search">
       <input id="q" type="search" placeholder="Search the docs" aria-label="Search the documentation" autocomplete="off">
@@ -71,6 +71,7 @@ gtag('config', 'G-HLG2699H0J');
     </details>
     <div class="meta-card">
       <div class="meta-row"><span class="meta-label">Platform</span><div class="meta-value">Atlassian Forge · Jira Cloud</div></div>
+      <div class="meta-row"><span class="meta-label">Get the app</span><div class="meta-value"><a href="https://marketplace.atlassian.com/apps/3433374711/crm">Atlassian Marketplace</a></div></div>
       <div class="meta-row"><span class="meta-label">Support</span><div class="meta-value"><a href="mailto:info@vudia.site">info@vudia.site</a></div></div>
     </div>
   </aside>
@@ -78,42 +79,47 @@ gtag('config', 'G-HLG2699H0J');
   <main id="content">
     <div class="crumb"><a href="index.html">Docs</a> / Guides</div>
     <h1>Dashboard</h1>
-    <p class="subtitle">The numbers grouped by what you would do about them, and tiles that take you straight to the records behind them.</p>
+    <p class="subtitle">Where sales stand at a glance: headline figures against the period before, the pipeline funnel, revenue by month, and the deals and tasks that come next.</p>
     <h2 id="what-is-on-it">What is on it<a class="h-anchor" href="#what-is-on-it" aria-label="Link to this section">#</a></h2>
-    <p>The Dashboard answers "what needs me today?" before "how are we doing?". Its sections:</p>
+    <p>Open <strong>Dashboard</strong>. From top to bottom:</p>
     <div class="tablewrap"><table>
-      <tr><th>Section</th><th>What it shows</th></tr>
-      <tr><td>Needs attention</td><td>Counts of things to act on: overdue tasks, overdue next steps, deals past their close date, stale deals and stale leads.</td></tr>
-      <tr><td>Totals</td><td>How many leads, contacts, companies and deals you have, and the lead conversion rate.</td></tr>
-      <tr><td>Pipeline</td><td>Open deals, open pipeline value, weighted pipeline and open tasks.</td></tr>
-      <tr><td>Performance</td><td>For a chosen period (7, 30 or 90 days, or all time), and optionally one assignee: won value, deals won and lost, win rate, new leads, average deal and sales cycle. With a period chosen, each tile shows the change against the period before it.</td></tr>
-      <tr><td>Pipeline by stage</td><td>How many deals and how much value sit in each stage.</td></tr>
-      <tr><td>Deals Closing Soon, Tasks Due Soon</td><td>The next things on the calendar.</td></tr>
-      <tr><td>Recently Won, Recent Activity</td><td>What just happened.</td></tr>
-      <tr><td>Trends</td><td>New leads, revenue and win rate over the last few months.</td></tr>
+      <tr><th>Part</th><th>What it shows</th></tr>
+      <tr><td>Headline figures</td><td>Eight cards: open deals, pipeline value, weighted pipeline, revenue won, deals won, win rate, new leads and conversion rate.</td></tr>
+      <tr><td>Pipeline funnel</td><td>How many deals sit in each stage, each stage in its own colour.</td></tr>
+      <tr><td>Revenue trend</td><td>The value of deals won in each of the last six months.</td></tr>
+      <tr><td>Active deals</td><td>The open deals closing soonest, with amount and stage. A close date that has passed is red.</td></tr>
+      <tr><td>My open tasks</td><td>Your own open tasks, soonest first, with priority.</td></tr>
     </table></div>
 
-    <h2 id="tiles-are-shortcuts">Tiles are shortcuts<a class="h-anchor" href="#tiles-are-shortcuts" aria-label="Link to this section">#</a></h2>
-    <p>A tile that names a group of records is a filter. Click <em>Stale deals</em>, for example, and you land on the Deals list already narrowed to exactly those deals. Use it as a daily starting point.</p>
+    <h2 id="period-and-assignee">Period and assignee<a class="h-anchor" href="#period-and-assignee" aria-label="Link to this section">#</a></h2>
+    <p>Choose <em>7 days</em>, <em>30 days</em>, <em>90 days</em> or <em>All time</em> at the top, and optionally one assignee. Revenue won, deals won, win rate, new leads and conversion rate follow the period. Open deals and pipeline value are as they stand now.</p>
+
+    <h2 id="change">The change beside a figure<a class="h-anchor" href="#change" aria-label="Link to this section">#</a></h2>
+    <p>With a period chosen, a figure shows how it moved against the stretch of the same length just before: green when it moved the good way, red the bad way, yellow when it stayed the same. For lost deals, going up is the bad way. Hover the change to see the earlier value. <em>All time</em> has nothing before it, so it shows no change.</p>
+
+    <h2 id="view-all">View all<a class="h-anchor" href="#view-all" aria-label="Link to this section">#</a></h2>
+    <p><strong>View all</strong> beside <em>Active deals</em> opens the Deals table with only open deals, sorted by close date. Beside <em>My open tasks</em> it opens Tasks with only your open tasks.</p>
 
     <h2 id="how-the-key-numbers-are-worked-out">How the key numbers are worked out<a class="h-anchor" href="#how-the-key-numbers-are-worked-out" aria-label="Link to this section">#</a></h2>
     <ul>
-      <li><strong>Win rate</strong>: deals won divided by deals won plus lost in the period. Open deals are not counted. With no closed deals it shows a dash rather than 0%.</li>
-      <li><strong>Sales cycle</strong>: the average time from creating a deal to winning it, for deals won in the period.</li>
+      <li><strong>Win rate</strong>: deals won divided by deals won plus lost in the period. Open deals are not counted.</li>
+      <li><strong>Conversion rate</strong>: of the leads created in the period, the share converted to a deal.</li>
       <li><strong>Weighted pipeline</strong>: see <a href="pipeline.html#weighted-pipeline">Leads, deals and the pipeline</a>.</li>
-      </ul>
-    <p>The currency of every amount comes from <a href="settings.html">Settings</a>.</p>
+    </ul>
+    <p>The currency of every amount comes from <a href="settings.html">Settings</a>. Things to act on today (overdue, stale, no next step) are counted at the top of the Leads, Deals and Tasks pages, where a click filters the list to them.</p>
 
     <h2 id="how-fresh-the-figures-are">How fresh the figures are<a class="h-anchor" href="#how-fresh-the-figures-are" aria-label="Link to this section">#</a></h2>
     <p>Dashboard and Reports figures are worked out from a summary the app refreshes every few minutes, so a change you just saved can take a little while to show. The line under the title says when the figures were worked out; press <strong>Refresh</strong> to update them now.</p>
     <div class="pagenav"><a class="prev" href="bulk-csv.html"><small>Previous</small>Bulk actions, import and export</a><a class="next" href="reports.html"><small>Next</small>Reports</a></div>
-    <div class="colophon">Dealtrail CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
+    <div class="colophon">CRM is built on Atlassian Forge and runs entirely on Atlassian's infrastructure. Questions or corrections: <a href="mailto:info@vudia.site">info@vudia.site</a>.</div>
   </main>
 
   <nav class="toc-right" aria-label="On this page">
     <p>On this page</p>
     <a href="#what-is-on-it">What is on it</a>
-    <a href="#tiles-are-shortcuts">Tiles are shortcuts</a>
+    <a href="#period-and-assignee">Period and assignee</a>
+    <a href="#change">The change beside a figure</a>
+    <a href="#view-all">View all</a>
     <a href="#how-the-key-numbers-are-worked-out">How the key numbers are worked out</a>
     <a href="#how-fresh-the-figures-are">How fresh the figures are</a>
   </nav>
