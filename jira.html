@@ -81,19 +81,24 @@ gtag('config', 'G-HLG2699H0J');
     <h1>Linking to Jira and sharing records</h1>
     <p class="subtitle">Connect records to the Jira work items that deliver them, see the customer on the work item, and send a colleague straight to a record.</p>
     <h2 id="linking-a-record-to-a-work-item">Linking a record to a work item<a class="h-anchor" href="#linking-a-record-to-a-work-item" aria-label="Link to this section">#</a></h2>
-    <p>Leads, contacts, companies and deals have a <strong>Jira work item</strong> field. Type a key such as <code>PROJ-123</code> and save.</p>
-    <p>The app checks the item <strong>as you</strong>: it must exist and you must be allowed to see it. The record then shows the item's summary and status next to the key, read live from Jira as the person viewing the card, so Jira's permissions apply.</p>
+    <p>Every lead, contact, company and deal card has a <strong>Jira work items</strong> block at the top of its main column. It lists the work items the record is linked to: key, summary, status in Jira's colours, and the assignee. Click a key to open the work item in Jira.</p>
+    <ol class="steps">
+      <li>Press <strong>Link work item</strong>.</li>
+      <li>Before you type, the list offers the work items you opened recently in Jira. Type a key such as <code>PROJ-12</code> or words from the summary to search.</li>
+      <li>Click a work item in the list. It is linked at once.</li>
+    </ol>
+    <p>Press <strong>×</strong> at the end of a row to unlink a work item, and <strong>+ Create work item</strong> to create a new one in Jira and link it in one step: choose a space and a work type and edit the summary (the record's name to start with).</p>
     <ul>
-      <li>Keys are not case sensitive: <code>proj-123</code> is stored as <code>PROJ-123</code>.</li>
-      <li>If the key does not exist, or you cannot see it, the save is refused with a message.</li>
-      <li>A record links to one work item at a time. One work item can have several records.</li>
+      <li>The search, the summary and the status come from Jira <strong>as you</strong>, so you only see work items Jira lets you see.</li>
+      <li>A record can be linked to any number of work items, and a work item to any number of records.</li>
+      <li>The create and edit forms of a record have the same search, to link a work item as you create the record.</li>
       <li>When a work item moves to another project, or a project's key is renamed, its links follow it to the new key within a few minutes. The change is recorded on each record's timeline.</li>
     </ul>
 
     <h2 id="the-crm-panel">The CRM panel on a work item<a class="h-anchor" href="#the-crm-panel" aria-label="Link to this section">#</a></h2>
     <p>Every Jira work item has a <strong>CRM</strong> panel in its details sidebar. Expand it to see the deals, contacts, companies and leads linked to that work item, with the deal's stage and amount or the contact's company and email. Click a name to open its card in the CRM.</p>
     <ul>
-      <li><strong>Link a CRM record</strong> links another one from there: pick the record type, type to search by name, and press <strong>Link</strong>. Linking a record here moves it from wherever it was linked before.</li>
+      <li><strong>Link a CRM record</strong> links another one from there: pick the record type, type to search by name, and press <strong>Link</strong>.</li>
       <li><strong>Unlink</strong> removes a link.</li>
     </ul>
     <p>Links and unlinks are recorded on the record's timeline.</p>
